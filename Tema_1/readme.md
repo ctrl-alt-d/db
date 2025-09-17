@@ -1,6 +1,13 @@
 Tema 1: Introducció a les bases de dades
 ===========================
 
+
+* [Concepte i ús dels sistemes gestors de bases de dades](Contingut/concepte-i-us-dels-sistemes-gestors-de-bases-de-dades.md)
+* [Pràctica 1 - Creant una base de dades a supabase](Contingut/creant-una-base-de-dades-a-supabase.md)
+* [Pràctica 2 - Connectant-nos a la base de dades des de DBeaver](Contingut/connectant-nos-a-la-base-de-dades-des-de-dbeaver.md)
+
+----------------------
+
 ## Criteris d'avaluació de cada resultat d'aprenentatge
 
 1. Reconeix els elements de les bases de dades analitzant-ne les funcions i valorant la utilitat dels sistemes gestors.
