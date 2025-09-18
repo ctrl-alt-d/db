@@ -6,6 +6,12 @@ Tema 1: Introducció a les bases de dades
 * [Sistemes Gestors de Base de Dades a les organitzacions](Contingut/sistemes-gestors-de-base-de-dades-a-les-organitzacions.md)
 * [Pràctica 1 - Creant una base de dades a supabase](Contingut/creant-una-base-de-dades-a-supabase.md)
 * [Pràctica 2 - Connectant-nos a la base de dades des de DBeaver](Contingut/connectant-nos-a-la-base-de-dades-des-de-dbeaver.md)
+* [Components ACID en un SGBD](Contingut/transaccions-acid/readme.md)
+* [Base de dades relacionals vs NoSQL](Contingut/bdrelacionals-vs-nosql/Readme.md)
+* [Base de dades distribuida - Conceptes](Contingut/base-de-dades-distribuida-components/readme.md)
+* [Base de dades distribuida - Teorema CAP](Contingut/base-de-dades-distribuida-teorema-cap/readme.md)
+* [Legislació en Protecció de Dades](Contingut/proteccio-dades/readme.md)
+* [Big data i intel·ligència de negoci](Contingut/bigdata/readme.md)
 
 ----------------------
 
