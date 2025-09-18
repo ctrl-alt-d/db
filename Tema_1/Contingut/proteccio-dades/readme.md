@@ -23,7 +23,7 @@ Els drets digitals dels ciutadans ja venen recolliys a l'article 18 de la consti
 > 
 > 4. **La ley limitará el uso de la informática para garantizar el honor y la intimidad personal y familiar de los ciudadanos y el pleno ejercicio de sus derechos**.
 
-Curiositat: La constitució espanyola data del 9178, per posar-ho en context, IBM va ser presentat al 1981.
+Curiositat: La constitució espanyola data del 1978, per posar-ho en context, IBM va ser presentat al 1981.
 
 ### Legislació actual
 
@@ -33,6 +33,8 @@ La legislació de protecció de dades a Espanya està principalment regida per d
 
 * El [RGPD (Reglament general de protecció de dades)](https://ca.wikipedia.org/wiki/Reglament_General_de_Protecci%C3%B3_de_Dades). El **RGPD** (Reglament UE 2016/679) és una normativa aprovada per la Unió Europea que va entrar en vigor el **25 de maig de 2018**. S'aplica a tots els estats membres de la UE i té com a objectiu garantir la protecció de les dades personals de les persones físiques dins de la UE, així com regular el tractament que es fa d'aquestes dades per part d'empreses, organitzacions i administracions públiques.
 * La [LOPDPGDD (Ley Orgánica de Protección de Datos Personales y garantía de los derechos digitales)](https://es.wikipedia.org/wiki/Ley_Org%C3%A1nica_de_Protecci%C3%B3n_de_Datos_Personales_y_garant%C3%ADa_de_los_derechos_digitales). La **LOPDPGDD** (Llei Orgànica 3/2018, del 5 de desembre) és una norma espanyola que adapta i complementa el RGPD a l'ordenament jurídic espanyol. Aquesta llei desenvolupa els aspectes que el reglament europeu deixa a la discreció dels estats membres i introdueix drets digitals específics.
+
+>Diferència entre [llei orgànica i reial decret](llei-vs-reglament.md)
 
 ### Principis bàsics del RGPD:
 
