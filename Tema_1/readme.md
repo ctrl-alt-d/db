@@ -1,11 +1,11 @@
 Tema 1: Introducció a les bases de dades
 ===========================
 
-
 * [Concepte i ús dels sistemes gestors de bases de dades](Contingut/concepte-i-us-dels-sistemes-gestors-de-bases-de-dades.md)
 * [Sistemes Gestors de Base de Dades a les organitzacions](Contingut/sistemes-gestors-de-base-de-dades-a-les-organitzacions.md)
 * [Pràctica 1 - Creant una base de dades a supabase](Contingut/creant-una-base-de-dades-a-supabase.md)
 * [Pràctica 2 - Connectant-nos a la base de dades des de DBeaver](Contingut/connectant-nos-a-la-base-de-dades-des-de-dbeaver.md)
+* [Introducció al modelatge de dades](Contingut/introduccio-ldm-er.md)
 * [Components ACID en un SGBD](Contingut/transaccions-acid/readme.md)
 * [Base de dades relacionals vs NoSQL](Contingut/bdrelacionals-vs-nosql/Readme.md)
 * [Base de dades distribuida - Conceptes](Contingut/base-de-dades-distribuida-components/readme.md)
