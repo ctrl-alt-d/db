@@ -11,7 +11,7 @@ Equivalència en crèdits ECTS: 12
 ## Activitats d'ensenyament aprenentatge (Temes)
 
 * Tema 1. [Introducció a les bases de dades](./Tema_1) (RA1)
-* Tema 2. Bases de dades relacionals
+* Tema 2. [Bases de dades relacionals](./Tema_2)
   * Tema 2.1. DDL I - Data Definition Language
     * Tema 2.1.1. Creació de taules (RA2)
     * Tema 2.1.2. Modificació i eliminació de taules (RA2)
