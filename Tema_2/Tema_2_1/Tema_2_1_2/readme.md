@@ -1,0 +1,1 @@
+# Tema 2.1.2. Modificació i eliminació de taules (RA2)
