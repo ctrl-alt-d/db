@@ -32,6 +32,11 @@ Equivalència en crèdits ECTS: 12
   * Tema 3.3. Normalització de models relacionals (RA6)
 * Tema 4. Bases de dades no relacionals (RA7) 
 
+### Alumnes compleció
+
+* Examen: Dia 20 de novembre de 2025 de 15:00h a 17:00h
+* [(Treball de compleció)](./Complesio/enunciat_ca.md) Entrega màxima dia 13 de novembre de 2025 a les 13:00h
+
 ### Temporalització
 
 Temporalització orientativa de l'assignatura:
