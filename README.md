@@ -35,7 +35,7 @@ Equivalència en crèdits ECTS: 12
 ### Alumnes compleció
 
 * [Examen](./Complesio/examen.7z): Dia 20 de novembre de 2025 de 15:00h a 17:00h
-* [Treball de compleció](./Complesio/enunciat_ca.md) Entrega màxima dia 13 de novembre de 2025 a les 13:00h
+* [Treball de compleció](./Complesio/enunciat_ca.md) Entrega màxima dia 3 de novembre de 2025 a les 13:00h
 
 Notes:
 
