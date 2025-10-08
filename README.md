@@ -35,7 +35,15 @@ Equivalència en crèdits ECTS: 12
 ### Alumnes compleció
 
 * [Examen](./Complesio/examen.7z): Dia 20 de novembre de 2025 de 15:00h a 17:00h
-* [(Treball de compleció)](./Complesio/enunciat_ca.md) Entrega màxima dia 13 de novembre de 2025 a les 13:00h
+* [Treball de compleció](./Complesio/enunciat_ca.md) Entrega màxima dia 13 de novembre de 2025 a les 13:00h
+
+Notes:
+
+* Per poder fer l'examen cal haver entregat i supererat el treball de compleció.
+* La nota serà 80% examen i 20% treball de compleció.
+* Per superar l'assignatura caldrà obtenir un mínim de 5 punts en l'examen i una nota final mínima de 5 punts.
+* El treball de compleció ha d'estar sencer. No es puntuarà parcialment.
+* El treball de compleció s'ha de poder defensar oralment. Es faran preguntes orals el dia de l'examen.
 
 ### Temporalització
 
