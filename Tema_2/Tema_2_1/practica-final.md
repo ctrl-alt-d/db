@@ -17,7 +17,7 @@ Tots els camps són NOT NULL.
 ```text
                                                                                       
   ┌─────────────────┐   ┌──────────────────┐  ┌──────────────────┐ ┌───────────────┐  
-  │Client           │   │Factura           │  │Producte          │ │Categoriara    │  
+  │Clients          │   │Factures          │  │Productes         │ │Categories     │  
   │                 │   │                  │  │                  │ │               │  
   │NIF   varchar PK │   │AnyFiscal int  PK │  │codi   varchar pk │ │Nom varchar pk │  
   │Nom   varchar AK1│   │Serie  varchar PK │  │nom    varchar    │ │               │  
@@ -33,11 +33,11 @@ Tots els camps són NOT NULL.
                           │        ┌────────────────────────┐ │                       
                           │        │LiniaDeFactura          │ │                       
                           │        │                        │ │                       
-                          │        │AnyFiscal int  FK1      │ │                       
-                          └────────┼Serie  varchar FK1      │ │                       
-                                   │Numero int     FK1      │ │                       
+                          │        │AnyFiscal int  PK,FK1   │ │                       
+                          └────────┼Serie  varchar PK,FK1   │ │                       
+                                   │Numero int     PK,FK1   │ │                       
                                    │                        │ │                       
-                                   │codiproducte varchar FK2┼─┘                       
+                                   │producte varchar PK,FK2 ┼─┘                       
                                    │                        │                         
                                    │quantitat  int          │                         
                                    └────────────────────────┘                         
@@ -56,11 +56,12 @@ Tots els camps són NOT NULL.
 
 Escriu l'SQL necessari per crear les taules i restriccions indicades al PDM. Afegeix també algunes dades d'exemple a cada taula.
 Utilitza les instruccions `ALTER TABLE` per realitzar les següents modificacions a l'esquema:
-1. Afegeix una columna `telefon` a la taula `Client`.
-2. Afegeix una clau forana de `producte` a `categoria`. Serà nullable, si s'esborra la categoria, el camp de producte es posa a NULL. Si s'actualitza el nom de la categoria, es propaga el canvi.
-3. Canvia el tipus de dada de la columna `preuVenta` a `decimal(10,2)` a la taula `Producte`.
-4. Esborra i torna a aferir la restricció d'integritat de la taula `Factura` cap a `Client`.
-5. Elimina la columna `cobrada` de la taula `Factura`.
-6. Afegeix una restricció d'unicitat a la columna `eMail` de la taula `Client`.
-7. Finalment, escriu les instruccions SQL per eliminar totes les dades de totes les taules.
-8. Esborra totes les taules.
+1. Crea les taules i insereix dades.
+2. Afegeix una columna `telefon` a la taula `Clients`.
+3. Afegeix una clau forana de `producte` a `categories`. Serà nullable, si s'esborra la categoria, el camp de producte es posa a NULL. Si s'actualitza el nom de la categoria, es propaga el canvi.
+4. Canvia el tipus de dada de la columna `preuVenta` a `decimal(10,2)` a la taula `Productes`.
+5. Esborra i torna a aferir la restricció d'integritat de la taula `Factures` cap a `Clients`.
+6. Elimina la columna `cobrada` de la taula `Factures`.
+7. Afegeix una restricció d'unicitat a la columna `eMail` de la taula `Clients`.
+8. Finalment, escriu les instruccions SQL per eliminar totes les dades de totes les taules.
+9. Esborra totes les taules.
