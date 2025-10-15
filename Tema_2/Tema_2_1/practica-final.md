@@ -58,9 +58,9 @@ Escriu l'SQL necessari per crear les taules i restriccions indicades al PDM. Afe
 Utilitza les instruccions `ALTER TABLE` per realitzar les següents modificacions a l'esquema:
 1. Crea les taules i insereix dades.
 2. Afegeix una columna `telefon` a la taula `Clients`.
-3. Afegeix una clau forana de `producte` a `categories`. Serà nullable, si s'esborra la categoria, el camp de producte es posa a NULL. Si s'actualitza el nom de la categoria, es propaga el canvi.
+3. Afegeix una clau forana de `producte` a `categories` (caldrà crear la columna i la restricció d'integritat referencial). Serà nullable, si s'esborra la categoria, el camp de producte es posa a NULL. Si s'actualitza el nom de la categoria, es propaga el canvi.
 4. Canvia el tipus de dada de la columna `preuVenta` a `decimal(10,2)` a la taula `Productes`.
-5. Esborra i torna a aferir la restricció d'integritat de la taula `Factures` cap a `Clients`.
+5. Esborra i torna a aferir la restricció d'integritat referencial de la taula `Factures` cap a `Clients`.
 6. Elimina la columna `cobrada` de la taula `Factures`.
 7. Afegeix una restricció d'unicitat a la columna `eMail` de la taula `Clients`.
 8. Finalment, escriu les instruccions SQL per eliminar totes les dades de totes les taules.
