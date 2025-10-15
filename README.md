@@ -14,8 +14,8 @@ Equivalència en crèdits ECTS: 12
 * Tema 2. [Bases de dades relacionals](./Tema_2/readme.md)
   * Tema 2.1. [DDL I - Data Definition Language](./Tema_2/Tema_2_1/readme.md)
     * Tema 2.1.1. [Creació de taules](./Tema_2/Tema_2_1/Tema_2_1_1/readme.md) (RA2)
-    * Tema 2.1.2. Modificació i eliminació de taules (RA2)
-  * Tema 2.2. DML - Data Manipulation Language
+    * Tema 2.1.2. [Modificació i eliminació de taules](./Tema_2/Tema2_2/readme.md) (RA2)
+  * Tema 2.2. DML - [Data Manipulation Language](./Tema_2/readme.md)
     * Tema 2.2.1. Insercions (RA4)
     * Tema 2.2.2. Consultes (RA3)
     * Tema 2.2.3. Actualitzacions (RA4)
