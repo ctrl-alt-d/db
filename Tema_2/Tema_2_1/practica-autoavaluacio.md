@@ -7,7 +7,7 @@ Observa aquestes taules:
 * tvshows(code pk, name)
 * episodes(tvshow_code pk fk1 ak1, season pk, number pk, title ak1)
 * users(id pk, username ak1, email ak1)
-* ratings(user_id pk fk1, tvshow_code fk2, season fk2, number fk2, starts)
+* ratings(user_id pk fk1, tvshow_code pk fk2, season pk fk2, number pk fk2, stars)
 
 Diccionari de dades:
 
@@ -16,7 +16,7 @@ Diccionari de dades:
 * `tvshow_genre`: Relació molts a molts entre sèries i gèneres. Una sèrie pot tenir diversos gèneres i un gènere pot estar associat a diverses sèries.
 * `episode`: Capítol o episodi d'una sèrie. S'identifica per la sèrie, la temporada i el número de capítol. Té un títol que és clau alternativa juntament amb el codi de la sèrie.
 * `user`: Usuari de la plataforma. Té un identificador únic, un nom d'usuari i un correu electrònic (ambdós són claus alternatives).
-* `rating`: Valoració que un usuari fa d'un episodi o sèrie. 
+* `rating`: Valoració que un usuari fa d'un episodi. 
 
 Fes el diagrama Physical Data Model a la teva llibreta. Mira d'entendre per a què serveix aquesta base de dades. Mira d'entendre també quina informació podem emmagatzemar. Respon a tu mateiux a aquestes preguntes:
 * Pot una sèrie tenir més d'un `genre` ?
@@ -66,7 +66,7 @@ Fes el diagrama Physical Data Model a la teva llibreta. Mira d'entendre per a qu
 * Inserta dos països.
 * Afegeix un camp `nacionalitat` a usuaris, pot contenir valors nulls, l'has de convertir a clau forana cap a `països`.
 * Assigna una nacionalitat a `joan_tv`
-* Elimina la restricció d'unicitat d'episodis.
+* Elimina la restricció d'unicitat d'episodis (la clau `unique`).
 * Esborra les restriccions d'integritat referencial de totes les taules.
 * Trunca totes es dades de totes les taules.
 * Esborra totes les taules.
