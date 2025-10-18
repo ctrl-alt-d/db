@@ -70,3 +70,13 @@ Fes el diagrama Physical Data Model a la teva llibreta. Mira d'entendre per a qu
 * Esborra les restriccions d'integritat referencial de totes les taules.
 * Trunca totes es dades de totes les taules.
 * Esborra totes les taules.
+
+
+## Entregables
+
+* Fes un markdown documentant tota la pràctica, l'objectiu és tenir-ho documentat per:
+   * Poder tornar a crear tota la base de dades un altre dia quan fem selects.
+   * Documentar aquells aspectes que cal tenir molt pressents, com ara, les relacions entre taules.
+   * Documentar com funcionen les dues relacions N:M, la de `genre` a `tvshow` i la `ratings` (és a dir la de `episode` a `usuari`)
+   * Poder estudiar pel dia de l'examen.
+   * Tenir-ho documentat per quan ho demani el professor. 
