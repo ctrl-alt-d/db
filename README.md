@@ -32,6 +32,14 @@ Equivalència en crèdits ECTS: 12
   * Tema 3.3. Normalització de models relacionals (RA6)
 * Tema 4. Bases de dades no relacionals (RA7) 
 
+Nota:
+
+```math
+QM = 0.8 \cdot (0.1 \cdot RA_1 +  0.2 \cdot RA_2 + 0.2 \cdot RA_3 + 0.2 \cdot RA_4 + 0.2 \cdot RA_5 + 0.1 \cdot RA_6) + 0.1 \cdot CC + 0.1 \cdot EE
+```
+
+_Nota: Per indicació del centre, les `capacitats clau` no s'avaluen dins els `resultats d'aprenentatge`, sino que s'avaluen de manera independent i se sumen a la nota amb un pes d'un 10% del total de la nota del `mòdul professional`. Llegir la `guia de l'estudiant` per més detalls._
+
 ### Alumnes compleció
 
 * [Examen](./Complesio/examen.7z): Dia 20 de novembre de 2025 de 15:00h a 17:00h
