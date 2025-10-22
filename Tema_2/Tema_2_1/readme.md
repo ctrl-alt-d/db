@@ -5,4 +5,5 @@ DDL és l'acrònim de `Data Definition Language`, i és un conjunt d'instruccion
 * [Tema 2.1.1. Creació de taules (RA2)](Tema_2_1_1/readme.md)
 * [Tema 2.1.2. Modificació i eliminació de taules (RA2)](Tema_2_1_2/readme.md)
 * [Pràctica final Tema 2.1 - DDL](practica-final.md)
-* [Pràctica d'autoavaluació Tema 2.1 - DDL](./practica-autoavaluacio.md)
+* [Pràctica d'autoavaluació 1 Tema 2.1 - DDL](./practica-autoavaluacio1.md)
+* [Pràctica d'autoavaluació 2 Tema 2.1 - DDL](./practica-autoavaluacio2.md)
