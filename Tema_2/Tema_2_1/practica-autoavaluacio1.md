@@ -64,7 +64,7 @@ Fes el diagrama Physical Data Model a la teva llibreta. Mira d'entendre per a qu
 * Comprova el comportament de les claus foranes actualitzant o esborrant dades.
 * Crea a taula `països` amb els camps `iso2` pk i `nom` AK1.
 * Inserta dos països.
-* Afegeix un camp `nacionalitat` a usuaris, pot contenir valors nulls, l'has de convertir a clau forana cap a `països`.
+* Afegeix un camp `nacionalitat` a usuaris, pot contenir valors nulls, és una clau forana cap a `països`. Crea la restricció d'integritat referencial (d' `usuaris` a `països` )
 * Assigna una nacionalitat a `joan_tv`
 * Elimina la restricció d'unicitat d'episodis (la clau `unique`).
 * Esborra les restriccions d'integritat referencial de totes les taules.
