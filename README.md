@@ -18,8 +18,8 @@ Equivalència en crèdits ECTS: 12
   * Tema 2.2. DML - [Data Manipulation Language](./Tema_2/Tema_2_2/readme.md)
     * [Tema 2.2.1. Insercions](./Tema_2/Tema_2_2/Tema_2_2_1/readme.md) (RA4)
     * [Tema 2.2.2. Consultes](./Tema_2/Tema_2_2/Tema_2_2_2/readme.md) (RA3)
-    * [Tema 2.2.3. Actualitzacions](./Tema_2/Tema_2_2/Tema_2_2_2/readme.md) (RA4)
-    * [Tema 2.2.4. Esborrats](./Tema_2/Tema_2_2/Tema_2_2_2/readme.md) (RA4)
+    * [Tema 2.2.3. Actualitzacions](./Tema_2/Tema_2_2/Tema_2_2_3/readme.md) (RA4)
+    * [Tema 2.2.4. Esborrats](./Tema_2/Tema_2_2/Tema_2_2_4/readme.md) (RA4)
   * Tema 2.3. Transaccions (RA4)
   * Tema 2.4. Procediments emmagatzemats (RA5)
   * Tema 2.5. DDL II - Data Definition Language
