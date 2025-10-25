@@ -38,7 +38,8 @@ Nota:
 QM = 0.8 \cdot (0.1 \cdot RA_1 +  0.2 \cdot RA_2 + 0.2 \cdot RA_3 + 0.2 \cdot RA_4 + 0.2 \cdot RA_5 + 0.1 \cdot RA_6) + 0.1 \cdot CC + 0.1 \cdot EE
 ```
 
-_Nota: Seguint les instruccions dictades pel centre (Ins Cendrassos), les `capacitats clau` **no** s'avaluen dins els `RAs (resultats d'aprenentatge)`, sino que s'avaluen de manera independent i la seva nota se suma a la nota ponderada de les `RAs` amb un pes d'un 10% del total de la nota del `mòdul professional`. Llegir la `guia de l'estudiant` per més detalls._
+> [!CAUTION]
+> Seguint les instruccions **dictades pel centre (Ins Cendrassos)**, les `capacitats clau` **no** s'avaluen dins els `RAs (resultats d'aprenentatge)`, sino que s'avaluen de manera independent i la seva nota se suma a la nota ponderada de les `RAs` amb un pes d'un 10% del total de la nota del `mòdul professional`. Llegir la `guia de l'estudiant` per més detalls.
 
 ### Alumnes compleció
 
