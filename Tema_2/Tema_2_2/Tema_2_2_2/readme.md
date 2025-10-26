@@ -24,4 +24,5 @@ Les consultes ens permeten:
 * [Conceptes d'àlgebra relacional (producte cartesià)](./09_algebra_II.md)
 * [Introduint Joins](./10_joins.md)
 * [Conceptes d'àlgebra relacional (unions, interseccions, diferències)](./11_algebra_III.md)
-* [Introduint Unions i altres operacions avançades](./12_unions.md)
+* [Introduint Subconsultes](./12_subconsultes.md)
+* [Introduint Unions i altres operacions avançades](./13_unions.md)
