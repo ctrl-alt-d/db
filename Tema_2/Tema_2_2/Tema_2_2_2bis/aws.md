@@ -96,13 +96,18 @@ Si no pots connectar-te:
 
 Des de dbeaver executarem els fitxers `*.sql` que trobem a `https://github.com/devrimgunduz/pagila`
 
+* Fes `git clone https://github.com/devrimgunduz/pagila.git` , entra a la carpeta que t'ha creat `pagila` i allà trobaràs els dos fitxers que cal executar desde dbeaver:
+* `pagila-schema.sql` Aquest script crea les taules. Després d'executar-lo, comprova que tens les taules creades (F5)
+* `pagila-insert-data.sql` Aquest script inserta les dades.
+
+
+> Per executarlos, connecta't des de dbeaver a la base de dades, crea un script (comprova que estàs a la base de dades correcte) i importa el primer fitxer i l'executes tot (seleccionar tot i executar). Fes el mateix amb el segon fitxer.
 
 ### 12) Neteja i costos
 
 Per evitar costos, quan acabis:
 
-- Para la instància si no l'utilitzes (Stop)
+- Atura la instància si no l'utilitzes (Stop)
 - O elimina-la (Delete) marcant «Create final snapshot» només si necessites còpia
-- Elimina grups de seguretat que ja no facis servir
 
 Recorda: el Free tier té límits. Controla sempre l'ús per no generar càrrecs inesperats.
