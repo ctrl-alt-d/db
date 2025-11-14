@@ -11,6 +11,38 @@ Les consultes ens permeten:
 - Agrupar i agregar dades
 - Combinar informació de diverses fonts
 
+## Entorns de proves:
+
+Aquests entorns es poden executar directament dins docker o dins docker compose:
+
+### Pagila
+
+* SGBD Base de dades: PostgreSQL
+* Usuari: postgres
+* Base de dades: posgres
+* Password: 123456
+* url: https://github.com/devrimgunduz/pagila
+* Temàtica: Videoclub
+
+### Accidents amb víctimes
+
+* SGBD Base de dades: PostgreSQL
+* Usuari: postgres
+* Base de dades: posgres
+* Password: 123456
+* url: https://github.com/ctrl-alt-d/AccidentsAmbVictimes
+* Temàtica: Dataset d'accidents amb víctimes a Catalunya
+
+### NorthWind (postgres)
+
+* SGBD Base de dades: PostgreSQL
+* Usuari: northwind
+* Base de dades: northwind
+* Password: northwind
+* url: https://github.com/bradymholt/docker-postgresql-northwind
+* Temàtica: empresa de comerç majorista
+
+
 ## Index
 
 * [Conceptes d'àlgebra relacional (selecció, projecció)](./01_algebra.md)
