@@ -34,8 +34,17 @@ FROM alumnes a
 RIGHT OUTER JOIN cursos b ON a.curs_id = b.id;
 ```
 
+### 4. FULL OUTER JOIN
 
-### 4. CROSS JOIN
+Retorna totes les files de les dues taules. Si no hi ha coincidència, les columnes de la taula sense coincidència seran NULL.
+
+```sql
+SELECT a.nom, b.nom_curs
+FROM alumnes a
+FULL OUTER JOIN cursos b ON a.curs_id = b.id;
+```
+
+### 5. CROSS JOIN
 
 Retorna el producte cartesià de les dues taules: totes les combinacions possibles de files.
 
@@ -83,12 +92,23 @@ RIGHT OUTER JOIN raça r ON g.raça = r.id;
 ```
 Les races sense cap gos tindran `nom_gos` a NULL.
 
+### FULL OUTER JOIN
+Obtenir tots els gossos i totes les races, coincideixin o no:
+
+```sql
+SELECT g.nom AS nom_gos, r.nom AS nom_raça
+FROM gossos g
+FULL OUTER JOIN raça r ON g.raça = r.id;
+```
+Els gossos sense raça definida tindran `nom_raça` a NULL, i les races sense cap gos tindran `nom_gos` a NULL.
+
 
 ## Resum
 
 - **INNER JOIN**: només coincidències a ambdues taules.
-- **LEFT OUTER JOIN**: totes les files de l'esquerra, coincidències de la dreta.
-- **RIGHT OUTER JOIN**: totes les files de la dreta, coincidències de l'esquerra.
+- **LEFT OUTER JOIN**: totes les files de l'esquerra, coincidències de la dreta de la paraula `join`.
+- **RIGHT OUTER JOIN**: totes les files de la dreta, coincidències de l'esquerra de la paraula `join`.
+- **FULL OUTER JOIN**: totes les files de les dues taules, amb NULLs on no hi ha coincidència.
 - **CROSS JOIN**: totes les combinacions possibles.
 
 Els joins són essencials per consultar dades relacionades i construir consultes avançades en SQL.
