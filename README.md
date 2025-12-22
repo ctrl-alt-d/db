@@ -40,7 +40,7 @@ QM = 0.8 \cdot (0.1 \cdot RA_1 +  0.2 \cdot RA_2 + 0.2 \cdot RA_3 + 0.2 \cdot RA
 ```
 
 > [!CAUTION]
-> Seguint les instruccions **dictades pel centre (Ins Cendrassos)**, les `capacitats clau` **no** s'avaluen dins els `RAs (resultats d'aprenentatge)`, sino que s'avaluen de manera independent i la seva nota se suma a la nota ponderada de les `RAs` amb un pes d'un 10% del total de la nota del `mòdul professional`. Llegir la `guia de l'estudiant` per més detalls.
+> Seguint les instruccions **del PCC Ins Cendrassos**, les `capacitats clau` **no** s'avaluen dins els `RAs (resultats d'aprenentatge)`, sino que s'avaluen de manera independent i la seva nota se suma a la nota ponderada de les `RAs` amb un pes d'un 10% del total de la nota del `mòdul professional`. Llegir la `guia de l'estudiant` per més detalls. Això està en fase de canvi però encara no està actualitzat el PCC, un cop s'actualitzi, aquí es publicarà el nou criteri d'avaluació.
 
 ### Alumnes compleció
 
@@ -99,6 +99,120 @@ Temporalització orientativa de l'assignatura:
 | 3.2   | M/ER - Model entitat/relació (RA6)        | 6.1, 6.2                         |
 | 3.3   | Normalització de models relacionals (RA6) | 6.4, 6.5                         |
 | 4     | Bases de dades no relacionals (RA7)       | 7.1, 7.2, 7.3, 7.4, 7.5          |
+
+
+
+## Entorns per a fer pràctiques
+
+Entorns per a fer pràctiques d'sql, sistemes gestors de base de dades sense dades i d'altres amb base de dades d'exemple.
+
+### Entorn Azure SQL Edge
+
+**Azure SQL Edge** és una versió optimitzada del motor de bases de dades de SQL Server, dissenyada per a dispositius IoT i edge computing. Utilitza el mateix motor que SQL Server, per tant la sintaxi T-SQL és pràcticament idèntica.
+
+> **Per què Azure SQL Edge i no SQL Server?**  
+> SQL Server només està disponible per a arquitectures x64 (Intel/AMD). Azure SQL Edge, en canvi, també funciona en arquitectures ARM64, com els Mac amb processadors Apple Silicon (M1, M2, M3...). Això ens permet treballar amb T-SQL en qualsevol equip.
+
+Per treballar amb bases de dades relacionals, inicialment, farem servir Azure SQL Edge dins docker i DBeaver com a client.
+
+Un cop instal·lat Docker, podem baixar la imatge de Azure SQL Edge i crear un contenidor amb les següents comandes:
+
+```bash
+docker run --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=yourStrong(!)Password' -p 1433:1433 --name sql1 -d mcr.microsoft.com/azure-sql-edge
+```
+
+Què significa cada paràmetre?
+- `-e "ACCEPT_EULA=Y"`: Accepta l'acord de llicència.
+- `-e "MSSQL_SA_PASSWORD=yourStrong(!)Password"`: Defineix la contrasenya per l'usuari `sa`.
+- `-p 1433:1433`: Mapeja el port 1433 del contenidor al port 1433 de la màquina host.
+- `--name sql1`: Assigna el nom `sql1` al contenidor.
+- `-d`: Executa el contenidor en mode desatès (background).
+- `mcr.microsoft.com/mssql/server:2022-latest`: Especifica la imatge de  a utilitzar.
+
+Un cop el contenidor està en funcionament, podem connectar-nos-hi utilitzant DBeaver.
+
+Comprova que s'ha engegat correctament amb la comanda, si no és així, repassa els logs.
+
+Comandes útils per gestionar el contenidor:
+- `docker ps`: Llista els contenidors en execució.
+- `docker stop sql1`: Atura el contenidor anomenat `sql1`.
+- `docker start sql1`: Inicia el contenidor anomenat `sql1`.
+- `docker logs sql1`: Mostra els logs del contenidor `sql1`.
+
+#### Connexió amb DBeaver
+
+Per connectar-te a Azure SQL Edge des de DBeaver:
+1. Crea una nova connexió seleccionant **SQL Server**.
+2. Introdueix les dades de connexió:
+   - **Host**: `localhost`
+   - **Port**: `1433`
+   - **Database**: `master` (base de dades per defecte)
+   - **Username**: `sa`
+   - **Password**: `yourStrong(!)Password`
+3. Prova la connexió i guarda-la.
+
+#### Creació de la base de dades
+
+Un cop connectats amb DBeaver, podem crear una nova base de dades usant l'entorn gràfic o amb SQL:
+
+```sql
+CREATE DATABASE nom_base_dades;
+```
+
+Repeteix la pràctica d'introducció a SQL, però aquesta vegada utilitzant Azure SQL Edge. Pots trobar la pràctica [aquí](../Tema_1/Contingut/creant-una-base-de-dades-a-supabase.md)
+
+### Entorn Postgres
+
+Per treballar amb PostgreSQL, farem servir un contenidor Docker i DBeaver com a client.
+
+Un cop instal·lat Docker, podem baixar la imatge de PostgreSQL i crear un contenidor amb la següent comanda:
+
+```bash
+docker run --name postgres1 -e POSTGRES_PASSWORD=yourStrong_Password -p 5432:5432 -d postgres:latest
+```
+
+Què significa cada paràmetre?
+- `-e "POSTGRES_PASSWORD=yourStrong_Password"`: Defineix la contrasenya per l'usuari `postgres` (usuari administrador per defecte).
+- `-p 5432:5432`: Mapeja el port 5432 del contenidor al port 5432 de la màquina host.
+- `--name postgres1`: Assigna el nom `postgres1` al contenidor.
+- `-d`: Executa el contenidor en mode desatès (background).
+- `postgres:latest`: Especifica la imatge de PostgreSQL a utilitzar.
+
+Un cop el contenidor està en funcionament, podem connectar-nos-hi utilitzant DBeaver.
+
+Comprova que s'ha engegat correctament amb la comanda `docker ps`, si no és així, repassa els logs.
+
+Comandes útils per gestionar el contenidor:
+- `docker ps`: Llista els contenidors en execució.
+- `docker stop postgres1`: Atura el contenidor anomenat `postgres1`.
+- `docker start postgres1`: Inicia el contenidor anomenat `postgres1`.
+- `docker logs postgres1`: Mostra els logs del contenidor `postgres1`.
+
+#### Connexió amb DBeaver
+
+Per connectar-te a PostgreSQL des de DBeaver:
+1. Crea una nova connexió seleccionant **PostgreSQL**.
+2. Introdueix les dades de connexió:
+   - **Host**: `localhost`
+   - **Port**: `5432`
+   - **Database**: `postgres` (base de dades per defecte)
+   - **Username**: `postgres`
+   - **Password**: `yourStrong_Password`
+3. Prova la connexió i guarda-la.
+
+#### Creació de la base de dades
+
+Un cop connectats amb DBeaver, podem crear una nova base de dades usant l'entorn gràfic o amb SQL:
+
+```sql
+CREATE DATABASE nom_base_dades;
+```
+
+Repeteix la pràctica d'introducció a SQL, però aquesta vegada utilitzant PostgreSQL. Pots trobar la pràctica [aquí](../Tema_1/Contingut/creant-una-base-de-dades-a-supabase.md)
+
+### SGBD amb bases de dades d'exemple:
+
+* https://github.com/ctrl-alt-d/AwesomeSampleDatabases
 
 
 ## Resultats d'aprenentatge i criteris d'avaluació
