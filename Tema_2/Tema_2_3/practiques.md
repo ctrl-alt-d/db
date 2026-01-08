@@ -364,9 +364,9 @@ SELECT * FROM sys.dm_tran_active_transactions;
 
 ## Conclusions
 
-- **READ UNCOMMITTED:** Més ràpid però insegur. Gairebé mai utilitzat en producció.
-- **READ COMMITTED:** La majoria de bases de dades per defecte. Bon balanç.
-- **REPEATABLE READ:** Més segur, però risc de phantom reads.
-- **SERIALIZABLE:** El més segur, però pot afectar el rendiment significativament.
+- **READ UNCOMMITTED:** Més ràpid però **permet dirty reads**. Només apropiat per a consultes informatives no crítiques (estadístiques, aproximacions). Desaconsellat per a operacions de negoci importants.
+- **READ COMMITTED:** La majoria de bases de dades per defecte. Bon balanç entre rendiment i integritat per a la majoria de casos.
+- **REPEATABLE READ:** Evita anomalies però permet phantom reads. Util quan necessites consistència en lectures múltiples dins de la transacció.
+- **SERIALIZABLE:** El més restrictiu, evita totes les anomalies però pot afectar el rendiment significativament. Usar només quan les dades són crítiques.
 
-Recorda: **La seguretat de les dades és més important que la velocitat!**
+**Recorda:** Tria el nivell d'aïllament segons el context de negoci i la naturalesa de les dades, no només segons la velocitat!
