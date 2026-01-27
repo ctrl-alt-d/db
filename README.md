@@ -22,7 +22,7 @@ Equivalència en crèdits ECTS: 12
     * [Tema 2.2.3. Actualitzacions](./Tema_2/Tema_2_2/Tema_2_2_3/readme.md) (RA4)
     * [Tema 2.2.4. Esborrats](./Tema_2/Tema_2_2/Tema_2_2_4/readme.md) (RA4)
   * [Tema 2.3. Transaccions](./Tema_2/Tema_2_3/readme.md) (RA4)
-  * Tema 2.4. Procediments emmagatzemats (RA5)
+  * [Tema 2.4. Procediments emmagatzemats](./Tema_2/Tema_2_4/) (RA5)
   * Tema 2.5. DDL II - Data Definition Language
     * Tema 2.5.1. Índexs (RA2)
     * Tema 2.5.2. Vistes (RA2)
