@@ -126,7 +126,7 @@ Primer creem el camp:
 
 ```sql
 alter table disponibles
-add column visitesCompromeses int not null default(0)
+add visitesCompromeses int not null default(0)
 ```
 
 Modifica el procediment emmagatzemat i digues quin seria ara el nivell d'isolació.
