@@ -25,6 +25,7 @@ Treballarem aquest tema a partir de dues pràctiques guiades:
 
 - [Venta entrades espectacles](practica_venta_entrades.md) — modelatge, `nou_esdeveniment` i `Comprar_entrades` amb comprovacions d'aïllament.
 - [Reserva visita veterinari](practica_veterinari.md) — modelatge, `Add_reserva` i variant amb comptador desnormalitzat.
+- [Comanda i estoc](./practica_estoc.md) - modelatge, `add_comanda` i variant amb comptador desnormalitzat.
 
 Tota la documentació de T-SQL està disponible on-line i de manera gratuita. Aquí us he fet una petita [xuleta de T-SQL](./xuleta_tsql.md).
 

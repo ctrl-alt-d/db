@@ -22,7 +22,7 @@ Per a la franja de les 12:00h del dia 24 de juny, obren 3 visites.
 
 ```sql
 INSERT INTO Disponibles(DiaHora, maxVisites)
-values ('2025-06-24 12:00', 3)
+values ('2027-06-24 12:00', 3)
 ```
 
 ## Primera part
@@ -35,75 +35,75 @@ Fes un procediment emmagatzemant que, donat el `nomAnimal` i el `DiaiHora` anoti
 
 
 ```sql
-CREATE PROCEDURE Add_reserva @DiaiHora  DATETIME,
-                            @NomAnimal VARCHAR(200)
+CREATE PROCEDURE add_reserva (
+    @nomAnimal VARCHAR(200),
+    @DiaHora DATETIME)
 AS
-  BEGIN
-        BEGIN try
-          SET nocount ON;
+BEGIN TRY
 
-          BEGIN TRANSACTION;
-          SET TRANSACTION isolation level serializable;
+    -- TX
+    BEGIN TRANSACTION;
+    SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
 
-          DECLARE @datadisponible DATETIME;
+    -- Validacions:
 
-          IF @DiaiHora < GETDATE()
-            BEGIN
-                RAISERROR('No es pot reservar amb dates del passat',16,1);
-            END
+    -- Data hora futur
+    if @DiaHora < GetDate()
+        raiserror('La data i la hora ha de ser del futur', 16, 1);
 
-          DECLARE @reservesdisponibles INT;
-          DECLARE @reservescompromeses INT;
+    -- Comprovem que la franja estigui present dins les franges disponibles
+    declare @test_permet_reserva as int
+    select @test_permet_reserva = count(*)
+    from Disponibles
+    
+    where DiaHora = @DiaHora;
+    if @test_permet_reserva = 0
+    raiserror('No hi ha disponibilitat a aquesta hora', 16, 1)
 
-          SELECT @reservesdisponibles = maxvisites
-          FROM   disponibles
-          WHERE  diahora = @DiaiHora;
+    -- Queden slots lliure a la franja seleccionada
+    -- Busquem el `maxVisites` d'aquella franja.
+    -- Busquem cuantes reseres ja tenim compromeses aquella franja
+    -- Restem les compromeses del maxVisites si queda un número superior a 0 podem acceptar la nova reserva
 
-          IF @reservesdisponibles IS NULL
-            BEGIN
-                RAISERROR('No hi ha disponibilitat en aquesta franja',16,1);
-            END
+    DECLARE @max_visites AS INT;
 
-          SELECT @reservescompromeses = Count(*)  -- Comptem reserves ja compromeses per la franja
-          FROM   reserves
-          WHERE  diahora = @DiaiHora;
+    SELECT @max_visites = maxVisites
+    FROM Disponibles
+    WHERE DiaHora = @DiaHora;
 
-          IF @reservesdisponibles - @reservescompromeses <= 0
-            BEGIN
-                RAISERROR('No queden visites per a aquesta data',16,1);
+    DECLARE @reserves_compromeses AS INT;
 
-            END
+    SELECT @reserves_compromeses = COUNT(*)
+    FROM Reserves
+    WHERE DiaHora = @DiaHora;
 
-          INSERT INTO reserves
-          VALUES      (@DiaiHora,
-                       @NomAnimal);
+    IF (@max_visites - @reserves_compromeses) <= 0
+        RAISERROR('No queden slots lliures a la franja seleccionada', 16, 1);
 
-          PRINT( 'Reserva realitzada' )
+    --  inserció de la reserva
 
-          COMMIT;
-      END try
+    insert into reserves(nomAnimal, DiaHora)
+    values (@nomAnimal, @DiaHora)
 
-        BEGIN catch
-          ROLLBACK;
-
-          DECLARE @ErrorMessage NVARCHAR(4000);
-          DECLARE @ErrorState INT;
-          DECLARE @ErrorSeverity INT;
-
-          SELECT @ErrorMessage = ERROR_MESSAGE(),
-             @ErrorState = ERROR_STATE(),
-             @ErrorSeverity = ERROR_SEVERITY();
-
-          -- Ordre correcte: (message, severity, state)
-          RAISERROR(@ErrorMessage, @ErrorSeverity, @ErrorState);
-        END catch
-  END 
+    COMMIT;
+END TRY
+BEGIN CATCH
+    ROLLBACK;
+    DECLARE @ErrorMessage NVARCHAR(4000);
+    DECLARE @ErrorSeverity INT;
+    DECLARE @ErrorState INT;
+    select 
+        @ErrorMessage = ERROR_MESSAGE(),
+        @ErrorSeverity = ERROR_SEVERITY(),
+        @ErrorState = ERROR_STATE();
+    RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState);
+END CATCH;
 ```
 
 Provem de fer la reserva:
 
 ```sql
-Exec add_reserva '2025-06-24 12:00', 'xuxu'
+Exec add_reserva '2027-06-24 12:00', 'xuxu'
 ```
 
 Cal també provar de fer reserves per testar la resta de casos.
