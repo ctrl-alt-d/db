@@ -1,7 +1,3 @@
-          IF @reservesdisponibles IS NULL
-            BEGIN
-                RAISERROR('No hi ha disponibilitat en aquesta franja',16,1);
-            END
 # Exercici reserva de visites al veterinari
 
 Un centre veterinari vol obrir una web per tal que els clients puguin fer `reserva` d'hora de visita. Cada franja horària permet diverses visites. Aquestes són les taules que han dissenyat:
@@ -33,7 +29,9 @@ values ('2025-06-24 12:00', 3)
 
 Fes un procediment emmagatzemant que, donat el `nomAnimal` i el `DiaiHora` anoti la `reserva`. El procediment emmagatzemant comprovarà que la data i hora és del futur. També comprovarà que sigui una franja que permet reserves. Per últim comprovarà que en aquella franja queda disponibilitat, que no ens hem passat del `maxVisites`. Penda i justifica el nivell d'isolació triat.
 
-Solució:
+<details>
+
+<summary>Solució:</summary>
 
 
 ```sql
@@ -111,6 +109,8 @@ Exec add_reserva '2025-06-24 12:00', 'xuxu'
 Cal també provar de fer reserves per testar la resta de casos.
 
 Hem triat nivell d'isolació serialitzable perquè quan fem la select *1 no podem permetre que apareguin phantom reads a la següent lectura, és a dir, que aquesta select ens ha d'aïllar també dels inserts, no només del updates i deletes (que seria el repeatable read)
+
+</details>
 
 ## Segona part
 
