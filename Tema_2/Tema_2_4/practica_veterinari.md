@@ -116,6 +116,12 @@ Hem triat nivell d'isolació serialitzable perquè quan fem la select *1 no pode
 
 Un cop posat en marxa el sistema, un desenvolupador sèrior ens explica que, en aquests casos, és millor 'desnormalitzar' i, un camp que podria ser calculat, el camp `visitesCompromeses` el materialitzem, és a dir, creem el camp `visitesCompromeses` a la taula `Disponibles` de la base de dades, al costat del camp `maxVisites`, d'aquesta manera, sabrem quantes de es visites disponibles ja estan compromeses sense haver de fer un select a la taula de reserves. Això implica gestionar aquest comptador (sumar 1 a `visitesCompromeses` a cada reserva)
 
+
+
+<details>
+
+<summary>Solució:</summary>
+
 Primer creem el camp:
 
 ```sql
@@ -203,3 +209,5 @@ AS
 ```
 
 Hem pogut relaxar el nivell d'isolació fins a `repeatable read` perquè ara ja no fem un select count a la taula de `reserves` sino que consultem el comptador a la mateixa taula de `disponibles`, aquest comptador s'actualitza mitjançant un `update` i el nivell d'isolació `repeatable read` ens isola dels updates.
+
+</details>
