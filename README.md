@@ -23,10 +23,10 @@ Equivalència en crèdits ECTS: 12
     * [Tema 2.2.4. Esborrats](./Tema_2/Tema_2_2/Tema_2_2_4/readme.md) (RA4)
   * [Tema 2.3. Transaccions](./Tema_2/Tema_2_3/readme.md) (RA4)
   * [Tema 2.4. Procediments emmagatzemats](./Tema_2/Tema_2_4/) (RA5)
-  * Tema 2.5. DDL II - Data Definition Language
-    * Tema 2.5.1. Índexs (RA2)
-    * Tema 2.5.2. Vistes (RA2)
-    * Tema 2.5.3. Usuaris i privilegis (RA2)
+  * Tema 2.5. DDL II - [Data Definition Language](./Tema_2/Tema_2_5/readme.md)
+    * [Tema 2.5.1. Índexs](./Tema_2/Tema_2_5/indexos.md) (RA2)
+    * [Tema 2.5.2. Vistes](./Tema_2/Tema_2_5/vistes.md) (RA2)
+    * [Tema 2.5.3. Usuaris i privilegis](./Tema_2/Tema_2_5/permisos.md) (RA2)
 * Tema 3. Disseny de bases de dades
   * Tema 3.1. PDM - Model físic de dades (RA6)
   * Tema 3.2. M/ER - Model entitat/relació (RA6)
