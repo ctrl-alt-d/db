@@ -275,12 +275,76 @@ ALTER INDEX ALL ON Client REBUILD;
 Crea una taula `Comanda` amb els camps `Id`, `ClientId`, `Data`, `Total` i `Estat`. Crea els índexs que consideris adequats per a les consultes típiques d'una botiga.
 
 ### Exercici 2
-Executa la consulta següent amb i sense índex i compara els plans d'execució:
+
+Primer, creem les taules `Clients` i `Comandes`:
+
+```sql
+-- Taula de Clients
+CREATE TABLE Clients (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Nom NVARCHAR(100) NOT NULL,
+    Cognom NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(200),
+    Telefon NVARCHAR(15),
+    DataAlta DATE DEFAULT GETDATE()
+);
+
+-- Taula de Comandes
+CREATE TABLE Comandes (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    ClientId INT NOT NULL,
+    Data DATE NOT NULL,
+    Total DECIMAL(10,2) NOT NULL,
+    Estat NVARCHAR(20) DEFAULT 'Pendent',
+    FOREIGN KEY (ClientId) REFERENCES Clients(Id)
+);
+```
+
+Ara inserim 10.000 registres aleatoris:
+
+```sql
+-- Insertem 1.000 clients aleatoris
+DECLARE @i INT = 1;
+
+WHILE @i <= 1000
+BEGIN
+    INSERT INTO Clients (Nom, Cognom, Email, Telefon)
+    VALUES (
+        CONCAT('Nom', @i),
+        CONCAT('Cognom', ABS(CHECKSUM(NEWID())) % 500),
+        CONCAT('client', @i, '@email.com'),
+        CONCAT('6', RIGHT('00000000' + CAST(ABS(CHECKSUM(NEWID())) % 100000000 AS VARCHAR), 8))
+    );
+    SET @i = @i + 1;
+END;
+
+-- Insertem 10.000 comandes aleatòries
+SET @i = 1;
+
+WHILE @i <= 10000
+BEGIN
+    INSERT INTO Comandes (ClientId, Data, Total, Estat)
+    VALUES (
+        (ABS(CHECKSUM(NEWID())) % 1000) + 1,  -- ClientId aleatori entre 1 i 1000
+        DATEADD(DAY, -ABS(CHECKSUM(NEWID())) % 730, GETDATE()),  -- Data dels últims 2 anys
+        CAST((ABS(CHECKSUM(NEWID())) % 50000) / 100.0 + 10 AS DECIMAL(10,2)),  -- Total entre 10 i 510€
+        CASE ABS(CHECKSUM(NEWID())) % 4
+            WHEN 0 THEN 'Pendent'
+            WHEN 1 THEN 'Enviat'
+            WHEN 2 THEN 'Entregat'
+            ELSE 'Cancel·lat'
+        END
+    );
+    SET @i = @i + 1;
+END;
+```
+
+Ara executa la consulta següent amb i sense índex i compara els plans d'execució:
 
 ```sql
 SELECT c.Nom, c.Cognom, COUNT(*) as NumComandes
-FROM Client c
-INNER JOIN Comanda co ON c.Id = co.ClientId
+FROM Clients c
+INNER JOIN Comandes co ON c.Id = co.ClientId
 WHERE co.Data >= '2025-01-01'
 GROUP BY c.Nom, c.Cognom
 ORDER BY NumComandes DESC;
