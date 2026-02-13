@@ -105,7 +105,7 @@ INSERT INTO Prova (nom, cost, stock) VALUES
 
 ---
 
-## Part 3 — Procediments emmagatzemats (4 punts)
+## Part 3 — Procediments emmagatzemats
 
 ### 3.1 `fer_ingres`
 
@@ -128,7 +128,7 @@ Escriu un procediment emmagatzemat `fer_ingres` que ingressa un pacient.
 
 ---
 
-### 3.2 `fer_prova` (1.5 punts)
+### 3.2 `fer_prova`
 
 Escriu un procediment emmagatzemat `fer_prova` que assigna una prova a un pacient ingressat.
 
@@ -151,7 +151,7 @@ Escriu un procediment emmagatzemat `fer_prova` que assigna una prova a un pacien
 
 ---
 
-### 3.3 `fer_factura` (1.5 punts)
+### 3.3 `fer_factura`
 
 Escriu un procediment emmagatzemat `fer_factura` que dóna l'alta a un pacient i genera la factura.
 
@@ -176,11 +176,11 @@ Escriu un procediment emmagatzemat `fer_factura` que dóna l'alta a un pacient i
 
 ---
 
-## Part 4 — Vistes (1.5 punts)
+## Part 4 — Vistes
 
 Crea les tres vistes següents. Cada vista serveix per donar accés controlat a un grup d'usuaris.
 
-### 4.1 `vw_personal_sanitari` (0.5 punts)
+### 4.1 `vw_personal_sanitari`
 
 Vista per al **Personal Sanitari (PS)**. Han de poder veure informació clínica però **no** veure dades econòmiques.
 
@@ -188,7 +188,7 @@ Vista per al **Personal Sanitari (PS)**. Han de poder veure informació clínica
 
 > No ha d'incloure: `Prova.cost`, `Prova.stock`, ni res de `Factura`.
 
-### 4.2 `vw_administracio` (0.5 punts)
+### 4.2 `vw_administracio`
 
 Vista per al **Personal d'Administració (PA)**. Han de poder veure les proves i el seu cost per poder facturar.
 
@@ -196,7 +196,7 @@ Vista per al **Personal d'Administració (PA)**. Han de poder veure les proves i
 
 > No ha d'incloure: `ProvaIngres.resultat` (dades clíniques) ni `Ingres.diagnostic`.
 
-### 4.3 `vw_comite_etica` (0.5 punts)
+### 4.3 `vw_comite_etica`
 
 Vista per al **Comitè d'Ètica (CE)**. Ho veu tot: dades clíniques i econòmiques.
 
@@ -204,7 +204,7 @@ Vista per al **Comitè d'Ètica (CE)**. Ho veu tot: dades clíniques i econòmiq
 
 ---
 
-## Part 5 — Usuaris, rols i permisos (1.5 punts)
+## Part 5 — Usuaris, rols i permisos
 
 ### 5.1 Crea els logins i usuaris següents
 
