@@ -27,6 +27,7 @@ Equivalència en crèdits ECTS: 12
     * [Tema 2.5.1. Índexs](./Tema_2/Tema_2_5/indexos.md) (RA2)
     * [Tema 2.5.2. Vistes](./Tema_2/Tema_2_5/vistes.md) (RA2)
     * [Tema 2.5.3. Usuaris i privilegis](./Tema_2/Tema_2_5/permisos.md) (RA2)
+  * [Tema 2.4 + Tema 2.5](./Tema_2_54/exercici.md)
 * Tema 3. Disseny de bases de dades
   * Tema 3.1. PDM - Model físic de dades (RA6)
   * Tema 3.2. M/ER - Model entitat/relació (RA6)
