@@ -1,5 +1,5 @@
 # Entitat inter-relació - Problema: La piulada
-## DAW-MP02-UF1 - Exercici de Introducció a les bases de dades
+## Exercici de Introducció a les bases de dades
 **Introducció**
 
 Problema molt tècnic on tot gira al voltant de dues entitats fortes molt definides: Usuari i Piulada. Cal ser capaç d'identificar correctament totes les relacions N:M, algunes amb atributs, d'aquestes dues entitats. Així com ser capaç d'identificar l'entitat subtipus de piulada que apareix al text.

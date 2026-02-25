@@ -1,5 +1,5 @@
 # El campeonat de gimnàstica rítmica
-## DAW-MP02-UF1 - Exercici de Introducció a les bases de dades
+## Exercici de Introducció a les bases de dades
 **Enunciat**
 
 [El campeonat de gimnàstica rítmica](https://gitlab.com/joanq/DAM-M2-BasesDeDades/blob/master/UF1/2-model_ER/ritmica.adoc) by Joan Queralt

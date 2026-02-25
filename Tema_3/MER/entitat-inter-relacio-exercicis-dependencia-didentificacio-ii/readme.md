@@ -1,5 +1,5 @@
 # Entitat inter-relació - Exercicis dependència d'identificació II
-## DAW-MP02-UF1 - Exercici de Introducció a les bases de dades
+## Exercici de Introducció a les bases de dades
 **Observa aquest Univers de discurs i el seu MCD corresponent:**
 
 *En una escola els professors imparteixen docència a diferents grups. Del professor emmagatzemem les inicials, el nom, el DNI i el seu correu electrònic. Dels grups emmagatzemem el nivell (exemple: ESO ) el curs ( exemple: 2 ), la lletra ( exemple 'E') i l'aula on són habitualment (exemple: 315 ). Ens interessa saber quantes ( no quines ) hores imparteix cada professor a cada grup. Hi ha professors que no imparteixen docència, tots els grups tenen professor*

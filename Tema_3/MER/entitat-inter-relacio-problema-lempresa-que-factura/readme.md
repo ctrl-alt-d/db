@@ -1,5 +1,5 @@
 # Entitat inter-relació - Problema: L'Empresa que Factura
-## DAW-MP02-UF1 - Exercici de Introducció a les bases de dades
+## Exercici de Introducció a les bases de dades
 **Introducció**
 
 És un MCD senzill on apareixen unes vuit entitats tipus més dues entitats subtipus. És interessant perquè s'estudia la interrelació N:M Producte-Factura molt didàctica i alhora present en molts sistemes informàtics.

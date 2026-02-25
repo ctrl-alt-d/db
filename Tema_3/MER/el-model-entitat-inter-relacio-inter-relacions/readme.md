@@ -1,5 +1,5 @@
 # El model Entitat Inter-relació - Inter-relacions
-## DAW-MP02-UF1 - Exercici de Introducció a les bases de dades
+## Exercici de Introducció a les bases de dades
 **Inter-relacions, Introducció**
 
 Inter-relació és la traducció que alguns autors utilitzen del vocable original amb anglès 'relationship'. Podriem usar simplement el vocable 'relació' i dir 'model entitat relació', però alguns alumnes tendeixen a confondre-ho amb el 'model relacional' que es veurà més endavant.

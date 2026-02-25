@@ -1,5 +1,5 @@
 # Primera Forma Normal (1FN)  
-## DAW-MP02-UF1 - Exercici d'Introducció a les Bases de Dades  
+## Exercici d'Introducció a les Bases de Dades  
 
 ### **Definició**
 

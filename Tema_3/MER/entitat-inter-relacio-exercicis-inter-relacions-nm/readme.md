@@ -1,5 +1,5 @@
 # Entitat inter-relació - Exercicis inter-relacions N:M
-## DAW-MP02-UF1 - Exercici de Introducció a les bases de dades
+## Exercici de Introducció a les bases de dades
 **Exemple: univers de discurs**
 
 *"Una **empresa** de manteniment de **piscines** vol una base de dades per controlar els **tractaments** efectuats. A cada piscina se li assigna un **codi** per diferenciar‑la (per exemple: piscina número 13). També emmagatzemem la **població** on es troba, l'**adreça**, els **metres cúbics**, el **nom del propietari** i un **telèfon de contacte**. Dels tractaments guardem la **data i l'hora** en què es realitza, el **codi del tècnic** que el realitza (per exemple: 'DH') i una **descripció del tractament**. Naturalment, volem saber a quina piscina s'ha realitzat cada tractament. Un mateix tècnic no pot fer dos tractaments al mateix temps; per això podem identificar un tractament respecte a un altre pels valors d'aquests atributs. Hi ha piscines a les quals encara no hem fet cap tractament; però sempre que fem un tractament cal indicar a quina piscina s'ha fet."*

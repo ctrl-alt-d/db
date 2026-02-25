@@ -1,5 +1,5 @@
 # Entitat inter-relació - Atributs obligatoris i valors nuls
-## DAW-MP02-UF1 - Exercici de Introducció a les bases de dades
+## Exercici de Introducció a les bases de dades
 Les entitats tenen atributs. Cal indicar si un atribut requereix o no un valor; aquesta restricció sovint s'anomena *mandatory* (obligatori). Sense aquesta informació, podríem trobar‑nos amb instàncies de l'entitat amb valors no informats. Per exemple, en una base de dades de treballadors podem decidir que la **data de naixement** no és obligatòria per a tots els treballadors, però sí que ho és el **nom**. Quan un valor no està informat diem que té el valor **NULL** (nul).
 
 Notació Crow's foot

@@ -1,5 +1,5 @@
 # Entitat inter-relació - Exercicis dependència d'identificació
-## DAW-MP02-UF1 - Exercici de Introducció a les bases de dades
+## Exercici de Introducció a les bases de dades
 **Concepte de Dependència en Identificació**
 
 Cada entitat ha de tenir un atribut o conjunt d'atributs que conformin l'AIP ( atribut identificador principal ). Tanmateix, de vegades ens trobem que no en fem prou amb els atributs de l'entitat per identificar-la unívocament i que necessitem incloure inter-relacions a l'AIP. En aquest cas estem parlant de **dependència en identificació**. Quan una entitat té dependència en identificació respecte alguna altre entitat diem que es tracta d'una **entitat feble**.

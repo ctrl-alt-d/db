@@ -1,5 +1,5 @@
 # El concepte de dependències funcionals i els seus tipus  
-## DAW-MP02-UF1 - Exercici d'introducció a les bases de dades
+## Exercici d'introducció a les bases de dades
 
 Tot el procés de normalització té un fonament matemàtic, i les definicions es poden expressar en un llenguatge semblant al llenguatge matemàtic. Anem a veure la definició formal de **dependència funcional**:
 

@@ -1,5 +1,5 @@
 # Entitat inter-relació - Problema: La lligueta
-## DAW-MP02-UF1 - Exercici de Introducció a les bases de dades
+## Exercici de Introducció a les bases de dades
 **Introducció**
 
 Problema força tècnic amb dobles inter-relacions entre entitats, apareix inter-relació 1:1. Important determinar entitats febles i les seves dependències en identificació. Hi trobaràs 8 entitats amb 12 inter-relacions.
