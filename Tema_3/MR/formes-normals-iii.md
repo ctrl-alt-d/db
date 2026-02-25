@@ -59,25 +59,25 @@ Relació inicial:
 
 ### **1. Normalitza aquesta relació:**
 
-Relació inicial:  
+Relació inicial:
 
-| _Jugador | Country       | _Dia     | MàximaPuntuació | Continent |
-|-------------|---------------|-------------|-----------------|-----------|
-| Zoom        | Cat           | 1/9/2016    | 24K            | Europe    |
-| Zoom        | Cat           | 2/9/2016    | 23K            | Europe    |
-| Creep       | Italy         | 1/9/2016    | 45K            | Europe    |
-| Creep       | Italy         | 2/9/2016    | 13K            | Europe    |
-| Nation      | Algery        | 2/9/2016    | 78K            | Africa    |
-| Smoker      | Saudi Arabia  | 2/9/2016    | 67K            | Asia      |
+| _Jugador | País         | _Dia       | MàximaPuntuació | Continent |
+|----------|--------------|------------|-----------------|-----------|
+| Zoom     | Catalunya    | 01/09/2016 | 24K             | Europa    |
+| Zoom     | Catalunya    | 02/09/2016 | 23K             | Europa    |
+| Creep    | Itàlia       | 01/09/2016 | 45K             | Europa    |
+| Creep    | Itàlia       | 02/09/2016 | 13K             | Europa    |
+| Nation   | Algèria      | 02/09/2016 | 78K             | Àfrica    |
+| Smoker   | Aràbia Saudita| 02/09/2016 | 67K            | Àsia      |
 
 #### Solució:
 
 1. **Comprovar si està en 1FN:**
-   - Sí,està en primer forma normal perquè està lliure de grups repetitius (no hi ha atributs multivaluats ni grups repetitius)
+   - Sí, està en primera forma normal perquè està lliure de grups repetitius (no hi ha atributs multivaluats ni grups repetitius).
 
 2. **Comprova si està en 2FN:**  
    - Per tal que estigui en 2FN els atributs que no formen part de la clau primària han de dependre funcionalment de **tots** els atributs de la clau primària.
-   - No està en 2a FN perquè hi ha atributs que no depenen de tota la clau primària. L'atribut *Country* només depen de *Jugador*
+   - No està en 2a FN perquè hi ha atributs que no depenen de tota la clau primària. L'atribut *País* només depèn de *Jugador*.
 
 3. **Pas a 2FN:**
    - Passem a una nova taula els atributs que no depenen funcionalment de tota la clau primària amb una còpia del seu determinant. En aquest cas, movem **Country** i **Continent** a una nova taula amb una còpia del seu determinant, **Jugador**, que serà la clau primària a la nova taula.
@@ -123,22 +123,22 @@ Relació inicial:
 
    **Taula 2: Jugadors (2FN):**  
 
-   |_Jugador| Country      |
-   |-|------------------|
-   |Zoom| Cat              |
-   |Creep| Italy            |
-   |Nation| Algery           |
-   |Smoker| Saudi Arabia     |
+   |_Jugador | País         |
+   |--------|--------------|
+   |Zoom    | Catalunya    |
+   |Creep   | Itàlia       |
+   |Nation  | Algèria      |
+   |Smoker  | Aràbia Saudita|
 
 
    **Taula 3: Countries (3FN):**  
 
-   | _Country      | Continent |
-   |------------------|-----------|
-   | Cat              | Europe    |
-   | Italy            | Europe    |
-   | Algery           | Africa    |
-   | Saudi Arabia     | Asia      |
+   | _País         | Continent |
+   |---------------|-----------|
+   | Catalunya     | Europa    |
+   | Itàlia        | Europa    |
+   | Algèria       | Àfrica    |
+   | Aràbia Saudita| Àsia      |
 
 ---
 

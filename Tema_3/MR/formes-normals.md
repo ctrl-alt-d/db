@@ -1,7 +1,7 @@
 
-# Documentació: Normalització de Bases de Dades Relacionals
+# Documentació: Normalització de bases de dades relacionals
 
-La normalització és el procés per organitzar els atributs i relacions d'una base de dades relacionals per tal de reduir la **redundància** de les dades i incrementar la **integritat**.
+La normalització és el procés per organitzar els atributs i les relacions d'una base de dades relacional per tal de reduir la **redundància** de les dades i augmentar la **integritat**.
 
 ---
 
@@ -15,11 +15,11 @@ Existeix una altra metodologia més formal i menys intuitiva que, aplicada a tot
 
 Encara que el procés de normalització és llarg i es realitza pas a pas, no és habitual utilitzar-lo directament per dissenyar estructures de dades. Tanmateix, és útil per justificar per què una relació està mal construïda. Per exemple, és més senzill dir: "aquesta relació està malament perquè no compleix amb la 2a forma normal" que justificar-ho des del MCD.
 
-### Avantatges de la normalització:
-- Una base de dades en **3a forma normal** està generalment lliure d'anomalies en:
-  - **Inserció**
-  - **Actualització**
-  - **Esborrat**
+### Avantatges de la normalització
+- Una base de dades en **3a forma normal** sol estar lliure d'anomalies en:
+   - **Inserció**
+   - **Actualització**
+   - **Esborrat**
 
 ---
 

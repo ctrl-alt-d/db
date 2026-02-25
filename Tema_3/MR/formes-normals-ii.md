@@ -60,22 +60,22 @@ Relacions després de la normalització:
 
 ### **1. Normalitza aquesta taula:**
 
-Relació inicial:  Suposem una taula que ens informa de la puntuació màxima de cada jugador per cada dia. Ex, Zoom el dia 1.9.2016 la seva puntuació màxima va ser 24K. I també ens informa de la nacionalitat del jugador. Ex, Zoom és Català.
+Relació inicial: suposem una taula que informa de la puntuació màxima de cada jugador per cada dia. Per exemple, Zoom el dia 01/09/2016 va obtenir una puntuació màxima de 24K. També s'indica la nacionalitat del jugador.
 
-| _Jugador | Country   | _Dia     | MàximaPuntuació |
-|-------------|-----------|-------------|-----------------|
-| Zoom        | Cat       | 1/9/2016    | 24K            |
-| Zoom        | Cat       | 2/9/2016    | 23K            |
-| Creep       | Italy     | 1/9/2016    | 45K            |
-| Creep       | Italy     | 2/9/2016    | 13K            |
-| Nation      | Algery    | 2/9/2016    | 78K            |
+| _Jugador | País       | _Dia       | MàximaPuntuació |
+|---------|------------|------------|-----------------|
+| Zoom    | Catalunya  | 01/09/2016 | 24K             |
+| Zoom    | Catalunya  | 02/09/2016 | 23K             |
+| Creep   | Itàlia     | 01/09/2016 | 45K             |
+| Creep   | Itàlia     | 02/09/2016 | 13K             |
+| Nation  | Algèria    | 02/09/2016 | 78K             |
 
 
 #### Solució:
 
 1. **Comprova si està en 2FN:**  
-   - Clau primària: _Jugador + _Dia  
-   - Atribut *Country* no depèn de tota la clau primària, només de _Jugador.  
+   - Clau primària: _Jugador + _Dia
+   - L'atribut *País* no depèn de tota la clau primària, sinó només de _Jugador.
 
 2. **Pas a 2FN:**  
    - Crea una nova taula per als atributs que no depenen de tota la clau primària.
@@ -104,13 +104,13 @@ Relació inicial:  Suposem una taula que ens informa de la puntuació màxima de
 
 Relació inicial:  
 
-| _Jugador | Country   | _Dia     | MàximaPuntuació |
-|-------------|-----------|-------------|-----------------|
-| Zoom        | Cat       | 1/9/2016    | 24K            |
-| Zoom        | Cat       | 2/9/2016    | 23K            |
-| Creep       | Italy     | 1/9/2016    | 45K            |
-| Creep       | Italy     | 2/9/2016    | 13K            |
-| Nation      | Algery    | 2/9/2016    | 78K            |
+| _Jugador | País       | _Dia       | MàximaPuntuació |
+|---------|------------|------------|-----------------|
+| Zoom    | Catalunya  | 01/09/2016 | 24K             |
+| Zoom    | Catalunya  | 02/09/2016 | 23K             |
+| Creep   | Itàlia     | 01/09/2016 | 45K             |
+| Creep   | Itàlia     | 02/09/2016 | 13K             |
+| Nation  | Algèria    | 02/09/2016 | 78K             |
 
 
 #### Solució:
@@ -126,16 +126,16 @@ Relació inicial:
 
 | _Jugador | _Dia       | MàximaPuntuació |
 |----------|------------|-----------------|
-| Zoom     | 1/9/2016   | 24K            |
-| Zoom     | 2/9/2016   | 23K            |
-| Creep    | 1/9/2016   | 45K            |
-| Creep    | 2/9/2016   | 13K            |
-| Nation   | 2/9/2016   | 78K            |
+| Zoom     | 01/09/2016 | 24K             |
+| Zoom     | 02/09/2016 | 23K             |
+| Creep    | 01/09/2016 | 45K             |
+| Creep    | 02/09/2016 | 13K             |
+| Nation   | 02/09/2016 | 78K             |
 
 **Taula 2: Jugadors:**  
 
-| _Jugador | Country   |
-|----------|-----------|
-| Zoom     | Cat       |
-| Creep    | Italy     |
-| Nation   | Algery    |
+| _Jugador | País       |
+|----------|------------|
+| Zoom     | Catalunya  |
+| Creep    | Itàlia     |
+| Nation   | Algèria    |

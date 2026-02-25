@@ -1,20 +1,19 @@
 # Entitat inter-relació - Atributs obligatoris i valors nuls
 ## DAW-MP02-UF1 - Exercici de Introducció a les bases de dades
-Les entitats tenen atributs. Existeix una restricció, que anomenarem *Mandatory*, per la qual és oblitari posar valor a un atribut. Sense aquesta restricció ens podriem trobar instàncies de l'entitat sense aquest valor informat. Per exemple, a la base de dades de treballadors, podriem determinar que no és obligatori emmagatzemar la **data de neixement** de tots els treballadors, però si ho és emmagatzemar el **nom**. Quan el valor no està informat diem que té valor **nul**.
+Les entitats tenen atributs. Cal indicar si un atribut requereix o no un valor; aquesta restricció sovint s'anomena *mandatory* (obligatori). Sense aquesta informació, podríem trobar‑nos amb instàncies de l'entitat amb valors no informats. Per exemple, en una base de dades de treballadors podem decidir que la **data de naixement** no és obligatòria per a tots els treballadors, però sí que ho és el **nom**. Quan un valor no està informat diem que té el valor **NULL** (nul).
 
-Crow foot:
+Notació Crow's foot
 
-![Imgur](http://i.imgur.com/Ik0JnYQ.png)
+![Notació Crow's foot](http://i.imgur.com/Ik0JnYQ.png)
 
-Barker:
+Notació Barker
 
-![Barker's notation](http://i.imgur.com/LAHe4i4.png)
-
+![Notació Barker](http://i.imgur.com/LAHe4i4.png)
 
 **Exercici**
 
-1. Identifica quins són els atributs 'Mandatory' i els AIP i com ho marquem al Model ER en notació crow foot i en notació Barker.  Quin et sembla més pràctic? Decideix quin faràs servir.
-2. Els atributs que formen l'atribut identificador principal han de ser **mandatories**. Busca una raó.
-3. Què són els valors nuls?
+1. Identifica quins són els atributs 'mandatory' i l'AIP, i com es marquen al model entitat‑relació en notació Crow's foot i en notació Barker. Quina notació et sembla més pràctica? Decideix quina faràs servir.
+2. Els atributs que formen l'atribut identificador principal han de ser **mandatory**. Cerca i explica una raó per això.
+3. Què són els valors NULL (nuls)? Explica com es diferencien d'un valor buit o d'un zero.
 
 

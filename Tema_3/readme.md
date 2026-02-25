@@ -1,4 +1,4 @@
-# Model entitat relació
+# Model entitat‑relació
 
 1. El concepte de model entitat-relació.
    * [Introducció](./MER/intro.md)
@@ -6,7 +6,7 @@
    * [Entitats i Atributs](./MER/ER-Entitats_i_atributs.md)
    * [Atribut identificador candidat](./MER/ER-AK.md)
 3. Relació: representació gràfica, atributs, grau i cardinalitat.
-   * [El model Entitat Inter-relació - Inter-relacions](./MER/el-model-entitat-inter-relacio-inter-relacions/readme.md)
+   * [El model entitat‑relació — Interrelacions](./MER/el-model-entitat-inter-relacio-inter-relacions/readme.md)
 4. Diagrames entitat-relació.
    * Cardinalitat.
       * [Entitat inter-relació - Exercicis inter-relacions 1:N](./MER/entitat-inter-relacio-exercicis-inter-relacions-1n/readme.md)

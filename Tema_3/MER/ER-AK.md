@@ -1,29 +1,30 @@
-# Entitat inter-relació - Exercicis Atributs Identificadors Candidats
-## DAW-MP02-UF1 - Exercici de Introducció a les bases de dades
-Cada entitat al menys ha de tenir un [Atribut Identificador Principal](/DAW/DAW-MP02/DAW-MP02-UF1/el-model-entitat-inter-relacio-conceptes/readme.md). Però pot ser que a l'hora de buscar-lo en trobem d'altres que també ens serveixin. Finalment n'haurem de triar un que serà el principal. Però el model conceptual de dades ens diu que cal informar també quins són els altres atributs identificadors que hem descartat. Són els atributs identificadors alternatius.
+## Atributs identificadors (candidates)
+### Exercici: atributs identificadors candidats
 
-Suposem el seguent univers de discurs: 
+Cada entitat ha de tenir, almenys, un atribut identificador principal (AIP). En el procés de modelatge apareixen altres atributs que també podrien identificar les instàncies; aquests són atributs identificadors candidats o alternatius.
 
-*En un institut cal emmagatzemar a la base de dades les dades dels professors. Cada professor té un codi assignat que és el que el cap d'estudis utilitza per fer horaris, etc. Per exemple el professor Ramon Pérez d'ADministratiu té el codi ADRP. A més emmagatzemem el DNI, el nom complet, el correu electrònic de l'XTEC (ex: rperez999@xtec.cat ) i la data de neixement.* 
+Exemple: suposem el següent enunciat:
 
-En aquest cas identifiquem **professor** com a entitat i les altres dades com atributs de professor. I ens fixem que hi ha un munt d'atributs identificadors candidats: les inicials, el DNI, el correu electrònic, el nom complet. En triem un de principal i els altres seran alternatius:
+En un institut cal emmagatzemar les dades dels professors. Cada professor té un codi intern que el cap d'estudis utilitza per fer horaris. Per exemple: el professor Ramon Pérez del departament Administratiu té el codi ADRP. També es recollirà el DNI, el nom complet, el correu electrònic institucional (ex.: rperez999@xtec.cat) i la data de naixement.
 
-![Atribut Identificador Candidat](http://i.imgur.com/HDAqNll.png)
+En aquest cas identifiquem l'entitat PROFESSOR i diversos atributs identificadors candidats: el codi intern, el DNI, el correu electrònic, el nom complet. En triarem un com a principal i la resta quedaran com a alternatius.
 
-**Exercici**
+![Atribut identificador candidat](http://i.imgur.com/HDAqNll.png)
 
-1) Fes el MCD d'aquest univers de discurs:
+### Exercicis
 
-*Un taller mecànic vol una base de dades dels seus mecànics. Emmagatzemen els següents camps: Especialitat (exemple: neumàtics ), Data incorporació a l'empresa, Número de treballador al llibre de treballadors de l'empresa, número de la seguretat social, dni, número de telèfon mòbil, nom i cognoms.*
+1) Fes el MCD de l'enunciat següent:
 
-2) Fes el MCD d'aquest univers de discurs:
+Un taller mecànic vol una base de dades dels seus mecànics. Emmagatzemen: especialitat (ex.: pneumàtics), data d'incorporació a l'empresa, número de treballador, número de la Seguretat Social, DNI, telèfon mòbil, nom i cognoms.
 
-*Una web d'internet desitja emmagatzemar usuaris. Les dades a emmagatzemar són: el 'usuari' per entrar a la web. L'email d'aquest usuari. La password ( naturalment una hash de la password ). Data de neixement. Nom complert. Nacionalitat ( codi Iso de dues lletres del seu pais, ex: BR ). I la data de la darrera connexió.*
+2) Fes el MCD de l'enunciat següent:
 
-3) Fes el MCD d'aquest univers de discurs:
+Una web vol emmagatzemar usuaris. Les dades són: nom d'usuari (per accedir), adreça de correu electrònic, contrasenya (preferiblement emmagatzemada com un hash), data de naixement, nom complet, nacionalitat (codi ISO de dues lletres, ex.: BR) i la data de la darrera connexió.
 
-*Una empresa té diferents delegacions. S'emmagatzema l'adreça que són els camps: carrer i número, porta, CP. També la provincia i la ciutat. Cada cop que s'obre una delegació nova en una ciutat se li posa un número començant per 1. Tenim per exemple: Barcelona 1, Barcelona 2 i Barcelona 3 i també Bellcaire 1 i Albons 1. Els treballadors estan acostumats a identificar les delegacions d'aquesta manera. També podrien identificar-les per la longitud i latitud que també es guarda a la base de dades, però no sembla tant pràctic.*
+3) Fes el MCD de l'enunciat següent:
 
-Ves amb compte, en aquest exercici els atributs identificadors són compostos.
+Una empresa té diferents delegacions. L'adreça es compon de carrer i número, porta, CP, província i ciutat. Cada vegada que s'obre una nova delegació en una ciutat se li assigna un número (Barcelona 1, Barcelona 2, ...). També es podrien identificar per coordenades (latitud/longitud), però això no sempre és pràctic.
+
+Ves amb compte: en aquest exercici els atributs identificadors poden ser compostos.
 
 
