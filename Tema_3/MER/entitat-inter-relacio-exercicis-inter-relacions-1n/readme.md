@@ -10,7 +10,7 @@
 
 ![Exemple inter-relació 1:N Model Conceptual de Dades](http://i.imgur.com/c7UKEXP.png)
 
-</<details>
+</details>
 
 *Nota: recorda que cada entitat té **un** atribut identificador principal; en el nostre cas, per a l'entitat Tractament l'AIP està format per dos atributs.*
 
