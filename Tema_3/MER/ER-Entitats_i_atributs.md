@@ -46,7 +46,7 @@ En aquest cas es poden distingir, per exemple:
 
 ### Exercici
 
-Un institut de Figueres vol una base de dades dels seus alumnes. De cada alumne interessa: nivell (ESO, batxillerat, cicle formatiu, ...), curs (1r, 2n, 3r), grup (A, B, C, ...), nom i data de naixement. Periòdicament es revisen les aules; ens interessa saber l'aula (per exemple, 201, 317, 101), la data de la revisió i el grau de neteja (0‑10). Tingues en compte que dues persones poden compartir nom o data de naixement.
+Un institut de Figueres vol una base de dades dels seus alumnes. De cada alumne interessa: nivell (ESO, batxillerat, cicle formatiu, ...), curs (1r, 2n, 3r), grup (A, B, C, ...), nom i data de naixement. Periòdicament es revisen les aules; ens interessa saber l'aula (per exemple, 201, 317, 101), la data de la revisió i el grau de neteja (0‑10). Tingues en compte que dues persones poden compartir nom o data de naixement, però no nom i data de neixement tots dos a la vegada.
 
 1. Identifica entitats, atributs i AIP.
 2. Assegura't que no consideres «institut» com una entitat si no recollim informació sobre ell (vegeu l'apartat d'errors comuns).
