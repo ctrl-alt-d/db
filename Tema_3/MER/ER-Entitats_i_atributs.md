@@ -28,7 +28,7 @@ Les entitats es representen amb una caixa: al capdamunt hi va el nom de l'entita
 
 Llegeix aquest enunciat i identifica entitats, atributs i AIP:
 
-Una organització sense ànim de lucre vol una base de dades dels seus socis. Els socis poden ser actius o passius. Dels socis interessa el nom i la data de naixement. També es volen recollir les activitats que es realitzen, la data, el nombre de persones que hi assisteixen, el cost i els ingressos. Les persones s'identifiquen per un codi basat en les inicials, i les activitats per (nom, data) —és a dir, el mateix nom pot repetir‑se en diferents dates.
+Una organització sense ànim de lucre vol una base de dades dels seus socis. Els socis poden ser actius o passius. Dels socis interessa el nom i la data de naixement. També es volen recollir les activitats que es realitzen, la data, el nombre de persones que hi assisteixen, el cost i els ingressos. Les persones s'identifiquen per un codi basat en les inicials, i les activitats per (nom, data) —és a dir, el mateix nom pot repetir‑se en diferents dates. Per exemple, el taller baldufes es fa tres cops a l'any.
 
 En aquest cas es poden distingir, per exemple:
 
