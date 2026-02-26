@@ -4,11 +4,16 @@
 
 *"Una **empresa** de manteniment de **piscines** vol una base de dades per controlar els **tractaments** efectuats. A cada piscina se li assigna un **codi** per diferenciar‑la (per exemple: piscina número 13). També emmagatzemem la **població** on es troba, l'**adreça**, els **metres cúbics**, el **nom del propietari** i un **telèfon de contacte**. Dels tractaments guardem la **data i l'hora** en què es realitza el tractament, el **codi del tècnic** que l'executa (per exemple: 'DH') i una **descripció del tractament**. Naturalment també volem saber a quina piscina s'ha realitzat cada tractament. Un mateix tècnic no pot fer dos tractaments al mateix temps; per això podem identificar un tractament respecte a un altre pels valors d'aquests atributs. Hi ha piscines a les quals encara no hem fet cap tractament; però sempre que fem un tractament cal indicar a quina piscina s'ha fet."*
 
-**Exemple de resolució**
+<details>
+
+<summary>Exemple de resolució</summary>
 
 ![Exemple inter-relació 1:N Model Conceptual de Dades](http://i.imgur.com/c7UKEXP.png)
 
+</<details>>
+
 *Nota: recorda que cada entitat té **un** atribut identificador principal; en el nostre cas, per a l'entitat Tractament l'AIP està format per dos atributs.*
+
 
 **Exercici**
 
