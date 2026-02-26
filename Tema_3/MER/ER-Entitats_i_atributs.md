@@ -53,6 +53,7 @@ Un institut de Figueres vol una base de dades dels seus alumnes. De cada alumne 
 3. Revisa que no hagis posat nivell (ESO, batxillerat) com a entitat; són valors d'un atribut.
 4. Revisa que els noms d'entitat siguin en singular.
 5. Valora si «aula» ha de ser atribut o entitat segons les dades que es volen emmagatzemar (si cal emmagatzemar aforament, pot passar a ser entitat).
-Llegeix amb atenció aquest univers de discurs:
+
+
 
 
