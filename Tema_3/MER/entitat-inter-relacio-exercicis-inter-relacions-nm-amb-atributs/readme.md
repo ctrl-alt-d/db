@@ -9,9 +9,13 @@
 
 "Ens interessa, a més, saber la **quantitat** de cada producte utilitzat en cada tractament. Això ho anomenarem **Dosi**: té atributs com **unitats** (ex.: kg, mg, ml) i **quantitat** (ex.: 12.5). Cada cop que s'administra una dosi, el sistema pot generar un **identificador** que utilitzarem com AIP de la dosi."
 
-**Resolució — exemple**
+
+<details>
+<summary>Fes clic per veure les solucions</summary>
 
 ![Exemple interrelació N:M amb atributs](http://i.imgur.com/WNVcAe0.png)
+
+</details>
 
 Notes
 

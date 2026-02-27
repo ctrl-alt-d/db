@@ -6,10 +6,13 @@
 
 *A més, es vol conèixer quins **productes** s'han utilitzat a cada tractament. Dels productes ens interessa el **nom comercial**, el **component actiu principal** i el seu **codi de barres**. Aquest darrer atribut és el valor que identifica unívocament cada producte. En un tractament es poden utilitzar diferents productes i un mateix producte es pot utilitzar en diferents tractaments. Pot ser que en un tractament no s'utilitzi cap producte; també pot haver-hi productes que mai no s'hagin fet servir en cap tractament."*
 
-**Resolució exemple**
+
+<details>
+<summary>Fes clic per veure les solucions</summary>
 
 ![Exemple inter-relació tipus de correspondència N:M](http://i.imgur.com/z3cKiqp.png)
 
+</details>
 
 **Exercici**
 
