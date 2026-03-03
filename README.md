@@ -36,25 +36,23 @@ Equivalència en crèdits ECTS: 12
 
 Nota:
 
+
+> [!CAUTION]
+> Seguint les instruccions del **PCC (Projecte Curricular de Centre) Ins Cendrassos**, les `capacitats clau` **no** s'avaluen dins els `RAs (resultats d'aprenentatge)`, sino que s'avaluen de manera independent i la seva nota se suma a la nota ponderada de les `RAs` amb un pes d'un 10% del total de la nota del `mòdul professional`. Llegir la `guia de l'estudiant` per més detalls. Això està en fase de canvi però encara no està actualitzat el PCC, un cop s'actualitzi, aquí es publicarà el nou criteri d'avaluació.
+
 ```math
 QM = 0.8 \cdot (0.1 \cdot RA_1 +  0.2 \cdot RA_2 + 0.2 \cdot RA_3 + 0.2 \cdot RA_4 + 0.2 \cdot RA_5 + 0.1 \cdot RA_6) + 0.1 \cdot CC + 0.1 \cdot EE
 ```
 
 > [!CAUTION]
-> Seguint les instruccions **del PCC Ins Cendrassos**, les `capacitats clau` **no** s'avaluen dins els `RAs (resultats d'aprenentatge)`, sino que s'avaluen de manera independent i la seva nota se suma a la nota ponderada de les `RAs` amb un pes d'un 10% del total de la nota del `mòdul professional`. Llegir la `guia de l'estudiant` per més detalls. Això està en fase de canvi però encara no està actualitzat el PCC, un cop s'actualitzi, aquí es publicarà el nou criteri d'avaluació.
+> Tenim indicacions (no reflectides encara al **del PCC (Projecte Curricular de Centre) Ins Cendrassos**) que canvia el criteria a l'avaluació de les capacitats clau. Ara les capacitats clau passen a ser un criteri d'avaluació més dins cada Resultat d'Aprenentage, mantenint una nota independent entre la nota de "tècnica" i la nota de capacitats clau. Les capacitats clau representen un 10% de la nota del RA (en aquest mòdul professional, no es pot superar un RA sense una nota igual o superior a 5 de nota tècnica) Un cop aquestes indicacions es publiquin al PCC s'aplicaran automàticament a aquest mòdul professional seguint les indicacions del centre.
 
-### Alumnes compleció
+```math
+QM = 0.9 \cdot (0.1 \cdot RA_1 +  0.2 \cdot RA_2 + 0.2 \cdot RA_3 + 0.2 \cdot RA_4 + 0.2 \cdot RA_5 + 0.1 \cdot RA_6) + 0.1 \cdot EE
+```
 
-* [Examen](./Complesio/examen.7z): Dia 20 de novembre de 2025 de 15:00h a 17:00h
-* [Treball de compleció](./Complesio/enunciat_ca.md) Entrega màxima dia 3 de novembre de 2025 a les 13:00h
+On cada RA conté un 10% de capacitats clau.
 
-Notes:
-
-* Per poder fer l'examen cal haver entregat i supererat el treball de compleció.
-* La nota serà 80% examen i 20% treball de compleció.
-* Per superar l'assignatura caldrà obtenir un mínim de 5 punts en l'examen i una nota final mínima de 5 punts.
-* El treball de compleció ha d'estar sencer. No es puntuarà parcialment.
-* El treball de compleció s'ha de poder defensar oralment. Es faran preguntes orals el dia de l'examen.
 
 ### Temporalització
 
@@ -77,10 +75,33 @@ Temporalització orientativa de l'assignatura:
 | 3.1   | PDM - Model físic de dades (RA6)            | 13 febrer - 20 febrer     |
 | 3.2   | M/ER - Model entitat/relació (RA6)          | 23 febrer - 6 març        |
 | 3.3   | Normalització de models relacionals (RA6)   | 9 març - 13 març          |
-| 4     | Bases de dades no relacionals (RA7)         | 16 març - 27 març         |
+| MP-PBD| Projecte de base de dades                   | 16 març - 10 abril  (*1)  |
+| 4     | Bases de dades no relacionals (RA7)         | 13 abril - 24 abril       |
+|       | [Mini projecte DAW](https://github.com/MINIPROJECTE-DAW2026/MiniProjecte)| 27 abril - 2 maig         |
 
 
-### Relació amb els continguts
+(*1) del disabte 28 de març al dilluns 6 d'abril hi ha setmana santa.
+
+> *Recuperacions*
+> Hi haurà un examen de recuperació / pujar nota dins la convocatòria ordinària. A Aquest examen es pot optar a recuperar o pujar nota d'un màxim de dos RA. El dia de l'examen serà el **dimarts dia 17 de març** a les hores de Llenguatge de Marques (sense pati)
+> Hi haurà una convocatòria extraordinaria per recuperar les RA no superades. Entre l'1 i el 5 de juny.
+
+
+### Alumnes compleció
+
+* [Examen](./Complesio/examen.7z): Dia 20 de novembre de 2025 de 15:00h a 17:00h
+* [Treball de compleció](./Complesio/enunciat_ca.md) Entrega màxima dia 3 de novembre de 2025 a les 13:00h
+
+Notes:
+
+* Per poder fer l'examen cal haver entregat i supererat el treball de compleció.
+* La nota serà 80% examen i 20% treball de compleció.
+* Per superar l'assignatura caldrà obtenir un mínim de 5 punts en l'examen i una nota final mínima de 5 punts.
+* El treball de compleció ha d'estar sencer. No es puntuarà parcialment.
+* El treball de compleció s'ha de poder defensar oralment. Es faran preguntes orals el dia de l'examen.
+
+
+### Relació RA amb els continguts
 
 | Codi  | Nom del tema                              | Continguts                       |
 |-------|-------------------------------------------|----------------------------------|
