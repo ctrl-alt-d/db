@@ -2,7 +2,7 @@
 ## Exercici de Introducció a les bases de dades
 **Introducció**
 
-Problema molt tècnic on tot gira al voltant de dues entitats fortes molt definides: Usuari i Piulada. Cal ser capaç d'identificar correctament totes les relacions N:M, algunes amb atributs, d'aquestes dues entitats. Així com ser capaç d'identificar l'entitat subtipus de piulada que apareix al text.
+Problema molt tècnic on tot gira al voltant de dues entitats fortes molt definides: Usuari i Piulada. Cal ser capaç d'identificar correctament totes les relacions N:M, algunes amb atributs, d'aquestes dues entitats.
 
 **Univers de Discurs**
 
@@ -17,7 +17,7 @@ a la piulada o bé l'han **'repiulada'** (han pres un botó per a que altres usu
 
 Els usuaris es poden **seguir** els uns als altres. Un 'follow' representaria que un usuari comença a seguir un altre. Ens interessa conèixer els 'follows' i el **moment** en que es produeixen.
 
-Hi ha un cas particular de Piulades que s'anomenen **'Piulades Patrocinades'**. És quan un usuari qualsevol inverteix diners per tal que l'algorisme del sistema faci que una determinada piulada la vegin més usuaris. Depenent de l'**import invertit** en el patrocini la veuran més o menys usuaris. Ens interessa saber quines piulades estan patrocinades, qui les patrocina i quans diners hi inverteix.
+Hi ha **'Piulades Patrocinades'**. És quan un usuari qualsevol inverteix diners per tal que l'algorisme del sistema faci que una determinada piulada la vegin més usuaris. Depenent de l'**import invertit** en el patrocini la veuran més o menys usuaris. Ens interessa conèixer els patrocinis. Un usuari pot patricinar una mateixa piulada més d'un cop. Els patrocinis els identifiquem per l'usuari, la piulada i la data de patrocini.
 
 **Exercici**
 
