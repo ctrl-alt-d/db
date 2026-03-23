@@ -20,6 +20,8 @@ No cal cap històric de quins jugadors han jugat cada partit o a quines empreses
 
 L'app tindrà un sistema de missatgeria. S'enviaran missatges amb subject i contingut des de un usuari a altres usuaris ja sigui per anunciar partits, resultats o el que sigui. La data-hora del missatge forma part de l'AIP, representa que un mateix usuari no pot enviar dos missatges al mateix moment.
 
+Notes: hi ha jugadors que ja no estan a cap equip, però els deixem a la base de dades per tenir anotats els gols que van fer.
+
 
 **Exercici**
 
