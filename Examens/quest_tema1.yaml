@@ -1,0 +1,82 @@
+title: Tema 1 - Fonaments de Bases de Dades
+
+questions:
+  - text: Quin és l'objectiu principal d'un SGBD (Sistema de Gestió de Bases de Dades)?
+    options:
+      - "Dissenyar interfícies web"
+      - "Gestionar dades de manera eficient, segura i concurrent"
+      - "Substituir el sistema operatiu"
+      - "Compilar codi font"
+    correct: 2
+    explanation: |
+      Un **SGBD** centralitza l'emmagatzematge, la consulta, la integritat i el control d'accés a les dades.
+
+  - text: Quina diferència clau hi ha entre dades i informació?
+    options:
+      - "No hi ha cap diferència"
+      - "Les dades són sempre numèriques i la informació sempre textual"
+      - "Les dades són fets en brut; la informació és dades processades amb context"
+      - "La informació només existeix en fitxers PDF"
+    correct: 3
+    explanation: |
+      Les **dades** són valors sense interpretar; esdevenen **informació** quan tenen context i significat per a una decisió.
+
+  - text: En el context de bases de dades distribuïdes, què descriu el teorema CAP?
+    options:
+      - "Que un sistema sempre compleix simultàniament consistència, disponibilitat i tolerància a particions"
+      - "Que només es poden assolir alhora dues de les tres propietats en presència de particions de xarxa"
+      - "Que la consistència és opcional en qualsevol sistema"
+      - "Que CAP és un protocol de xifrat"
+    correct: 2
+    explanation: |
+      El teorema **CAP** indica el trade-off entre `Consistency`, `Availability` i `Partition tolerance`.
+
+  - text: Quina afirmació sobre bases de dades relacionals i NoSQL és correcta?
+    options:
+      - "NoSQL sempre substitueix les relacionals"
+      - "Les relacionals no poden tenir index"
+      - "Les relacionals destaquen en integritat i model estructurat; NoSQL pot oferir més flexibilitat d'esquema"
+      - "NoSQL prohibeix la replicació"
+    correct: 3
+    explanation: |
+      No és una qüestió de "millor o pitjor" en general, sinó d'**adequació al cas d'ús**.
+
+  - text: Quina propietat ACID garanteix que una transaction s'aplica completament o no s'aplica gens?
+    options:
+      - "Consistency"
+      - "Isolation"
+      - "Atomicity"
+      - "Durability"
+    correct: 3
+    explanation: |
+      **Atomicity** evita estats intermedis: o bé tot, o bé res.
+
+  - text: Què implica la propietat ACID de Durability?
+    options:
+      - "Que dues transaccions no poden executar-se mai alhora"
+      - "Que els canvis confirmats persisteixen fins i tot després d'una fallada"
+      - "Que totes les consultes han de ser de només lectura"
+      - "Que la base de dades elimina automàticament dades duplicades"
+    correct: 2
+    explanation: |
+      Amb **Durability**, després de `COMMIT`, els canvis han de sobreviure a reinicis o errors del sistema.
+
+  - text: Quin avantatge aporta l'ús d'index en una taula gran?
+    options:
+      - "Augmentar sempre la mida de cada registre"
+      - "Accelerar certes consultes de cerca i filtratge"
+      - "Eliminar la necessitat de claus primàries"
+      - "Evitar qualsevol bloqueig de concurrència"
+    correct: 2
+    explanation: |
+      Un **index** redueix el cost de cerca en moltes consultes, tot i que pot encarir insercions i actualitzacions.
+
+  - text: Quin paper té la protecció de dades en el disseny de sistemes d'informació?
+    options:
+      - "És opcional si les dades són internes"
+      - "Només afecta el disseny visual de l'aplicació"
+      - "Obliga a aplicar mesures tècniques i organitzatives per garantir confidencialitat i compliment normatiu"
+      - "Només s'aplica a empreses multinacionals"
+    correct: 3
+    explanation: |
+      La protecció de dades forma part del disseny del sistema: control d'accés, minimització de dades, traçabilitat i seguretat.
