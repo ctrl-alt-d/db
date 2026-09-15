@@ -48,47 +48,29 @@ On cada RA conté un 10% de capacitats clau.
 
 Temporalització orientativa de l'assignatura:
 
-| Codi  | Nom del tema                                | Temporalització           |
-|-------|---------------------------------------------|---------------------------|
-| 1     | Introducció a les bases de dades (RA1)      | 15 setembre - 26 setembre |
-| 2.1.1 | Creació de taules (RA2)                     | 29 setembre - 16 octubre  |
-| 2.1.2 | Modificació i eliminació de taules (RA2)    | 17 octubre - 17 octubre   |
-| 2.2.1 | Insercions (RA4)                            | 20 octubre - 23 octubre   |
-| 2.2.2 | Consultes (RA3)                             | 24 octubre - 28 novembre  |
-| 2.2.3 | Actualitzacions (RA4)                       | 1 desembre - 4 desembre   |
-| 2.2.4 | Esborrats (RA4)                             | 5 desembre - 11 desembre  |
-| 2.3   | Transaccions (RA4)                          | 12 desembre - 9 gener     |
-| 2.4   | Procediments emmagatzemats (RA5)            | 12 gener - 30 gener       |
-| 2.5.1 | Índexs (RA2)                                | 2 febrer - 5 febrer       |
-| 2.5.2 | Vistes (RA2)                                | 6 febrer - 6 febrer       |
-| 2.5.3 | Usuaris i privilegis (RA2)                  | 9 febrer - 12 febrer      |
-| 3.1   | PDM - Model físic de dades (RA6)            | 13 febrer - 20 febrer     |
-| 3.2   | M/ER - Model entitat/relació (RA6)          | 23 febrer - 6 març        |
-| 3.3   | Normalització de models relacionals (RA6)   | 9 març - 13 març          |
-| MP-PBD| Projecte de base de dades                   | 16 març - 10 abril  (*1)  |
-| 4     | Bases de dades no relacionals (RA7)         | 13 abril - 24 abril       |
-|       | [Mini projecte DAW](https://github.com/MINIPROJECTE-DAW2026/MiniProjecte)| 27 abril - 2 maig         |
+| Codi | Nom del tema | Temporalització |
+|------|-------------|-----------------|
+| 1 | Introducció a les bases de dades (RA1) | 14 setembre - 25 setembre |
+| 2.1.1 | Creació de taules (RA2) | 25 setembre - 13 octubre |
+| 2.1.2 | Modificació i eliminació de taules (RA2) | 13 octubre - 16 octubre |
+| 2.2.1 | Insercions (RA4) | 16 octubre - 20 octubre |
+| 2.2.2 | Consultes (RA3) | 20 octubre - 24 novembre |
+| 2.2.3 | Actualitzacions (RA4) | 27 novembre - 30 novembre |
+| 2.2.4 | Esborrats (RA4) | 1 desembre - 4 desembre |
+| 2.3 | Transaccions (RA4) | 4 desembre - 21 desembre |
+| 2.4 | Procediments emmagatzemats (RA5) | 8 gener - 25 gener |
+| 2.5.1 | Índexs (RA2) | 26 gener - 29 gener |
+| 2.5.2 | Vistes (RA2) | 29 gener - 1 febrer |
+| 2.5.3 | Usuaris i privilegis (RA2) | 2 febrer - 5 febrer |
+| 3.1 | PDM - Model físic de dades (RA6) | 5 febrer - 19 febrer |
+| 3.2 | M/ER - Model entitat/relació (RA6) | 19 febrer - 2 març |
+| 3.3 | Normalització de models relacionals (RA6) | 5 març - 9 març |
+| 4 | Bases de dades no relacionals (RA7) | 9 març - 7 maig |    |
 
-
-(*1) del disabte 28 de març al dilluns 6 d'abril hi ha setmana santa.
 
 > *Recuperacions*
-> Hi haurà un examen de recuperació / pujar nota dins la convocatòria ordinària. A Aquest examen es pot optar a recuperar o pujar nota d'un màxim de dos RA. El dia de l'examen serà el **dimarts dia 17 de març** a les hores de Llenguatge de Marques (sense pati)
+> Hi haurà un examen de recuperació / pujar nota dins la convocatòria ordinària. A Aquest examen es pot optar a recuperar o pujar nota d'un màxim de dos RA.
 > Hi haurà una convocatòria extraordinaria per recuperar les RA no superades. Entre l'1 i el 5 de juny.
-
-
-### Alumnes compleció
-
-* [Examen](./Complesio/examen.7z): Dia 20 de novembre de 2025 de 15:00h a 17:00h
-* [Treball de compleció](./Complesio/enunciat_ca.md) Entrega màxima dia 3 de novembre de 2025 a les 13:00h
-
-Notes:
-
-* Per poder fer l'examen cal haver entregat i supererat el treball de compleció.
-* La nota serà 80% examen i 20% treball de compleció.
-* Per superar l'assignatura caldrà obtenir un mínim de 5 punts en l'examen i una nota final mínima de 5 punts.
-* El treball de compleció ha d'estar sencer. No es puntuarà parcialment.
-* El treball de compleció s'ha de poder defensar oralment. Es faran preguntes orals el dia de l'examen.
 
 
 ### Relació RA amb els continguts
