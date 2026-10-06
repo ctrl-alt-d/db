@@ -67,6 +67,14 @@ Temporalització orientativa de l'assignatura:
 | 3.3 | Normalització de models relacionals (RA6) | 5 març - 9 març |
 | 4 | Bases de dades no relacionals (RA7) | 9 març - 7 maig |    |
 
+### Dates d'examen
+
+| Setmana d'exàmens | Data | Proposta d'assignatures |
+|--------------------|------|--------------------------|
+| Primera setmana | 16 de novembre | Sistemes / Digi |
+| Segona setmana | 15 de febrer | Program / Entorns |
+| Tercera setmana | 17 de maig | Marques i BD |
+
 
 > *Recuperacions*
 > Hi haurà un examen de recuperació / pujar nota dins la convocatòria ordinària. A Aquest examen es pot optar a recuperar o pujar nota d'un màxim de dos RA.

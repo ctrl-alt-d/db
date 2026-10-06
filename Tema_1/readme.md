@@ -10,7 +10,7 @@ Tema 1: Introducció a les bases de dades
 * [Base de dades relacionals vs NoSQL](Contingut/bdrelacionals-vs-nosql/Readme.md)
 * [Base de dades distribuida - Conceptes](Contingut/base-de-dades-distribuida-components/readme.md)
 * [Base de dades distribuida - Teorema CAP](Contingut/base-de-dades-distribuida-teorema-cap/readme.md)
-* [Legislació en Protecció de Dades](Contingut/proteccio-dades/readme.md)
+* [Protecció de dades en aplicacions i bases de dades](Contingut/proteccio-dades/readme.md)
 * [Big data i intel·ligència de negoci](Contingut/bigdata/readme.md)
 
 ----------------------

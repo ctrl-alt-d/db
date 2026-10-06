@@ -1,47 +1,63 @@
-# Resum clau — Protecció de dades (RGPD + LOPDGDD)
+# Resum — Protecció de dades
 
-## 1) Marc normatiu
-- **RGPD (UE 2016/679)**: aplicable des del **25/05/2018** a tota la UE.  
-- **LOPDGDD (LO 3/2018)**: adapta i complementa el RGPD a Espanya, incloent **drets digitals** addicionals.  
-- **Constitució Espanyola, art. 18.4**: “La llei limitarà l’ús de la informàtica per garantir l’honor i la intimitat personal i familiar dels ciutadans i el ple exercici dels seus drets.”
+## Què protegeix l'RGPD?
 
----
+Protegeix les persones físiques respecte del **tractament** de les seves **dades personals**. Tractar inclou recollir, consultar, relacionar, comunicar, conservar i suprimir.
 
-## 2) Principis bàsics del RGPD (art. 5)
-- **Transparència, lleialtat i legalitat**  
-- **Limitació de la finalitat** (només per a usos concrets)  
-- **Minimització de dades** (només les necessàries)  
-- **Exactitud** (dades correctes i actualitzades)  
-- **Limitació del termini de conservació** (no guardar més temps del necessari)  
-- **Integritat i confidencialitat** (seguretat i privacitat)  
-- **Responsabilitat proactiva** (demostrar el compliment)
+- **Dada anònima:** la persona no és identificable per mitjans raonablement probables; si l'anonimització és efectiva, no és dada personal.
+- **Dada pseudonimitzada:** es necessita informació addicional per atribuir-la a una persona; continua sent dada personal.
 
----
+## Principis
 
-## 3) Drets dels ciutadans
-Drets: **accés, rectificació, oposició, supressió (oblit), limitació, portabilitat i no ser objecte de decisions automatitzades**.  
-Característiques:
-- Exercici gratuït.  
-- Resposta màxim en **1 mes** (ampliable a 3).  
-- El responsable ha d’oferir mitjans clars i accessibles.  
-- Possibilitat de reclamar davant l’**AEPD** si no s’atén la sol·licitud.
+1. Licitud, lleialtat i transparència.
+2. Limitació de la finalitat.
+3. Minimització de dades.
+4. Exactitud.
+5. Limitació del termini de conservació.
+6. Integritat i confidencialitat.
+7. Responsabilitat proactiva: complir i poder-ho demostrar.
 
----
+## Base jurídica
 
-## 4) Rols i deures
-- **Responsable**: decideix la finalitat i mitjans del tractament → ha de garantir compliment i seguretat.  
-- **Encarregat**: tracta dades per compte d’un altre segons instruccions → ha de garantir seguretat i confidencialitat.  
-- Excepció: activitats personals o domèstiques → no s’aplica la normativa.
+Cada finalitat necessita una base jurídica: consentiment, contracte, obligació legal, interessos vitals, missió d'interès públic o poders públics, o interès legítim en els supòsits aplicables. **El consentiment no és l'única base ni permet ignorar la minimització.**
 
----
+## Tipus de dades i risc
 
-## 5) Obligacions clau (responsabilitat proactiva)
-1. **Registre i inventari** d’activitats de tractament.  
-2. **Designar DPD** (delegat de protecció de dades) quan sigui obligatori.  
-3. **Avaluació de riscos** i, si cal, **avaluació d’impacte (EIPD)**.  
-4. **Protecció de dades des del disseny i per defecte**.  
-5. **Seguretat** tècnica i organitzativa.  
-6. **Notificació de bretxes** a l’autoritat (72h) i als afectats si és greu.  
-7. **Transferències internacionals** només amb garanties (clàusules tipus, BCR, consentiment, etc.).
+- Les categories especials de l'article 9 inclouen origen racial o ètnic, opinions polítiques, conviccions religioses o filosòfiques, afiliació sindical, dades genètiques, biomètriques per identificar unívocament, salut, vida sexual i orientació sexual.
+- Les dades sobre condemnes i infraccions penals tenen un règim separat a l'article 10.
+- Ubicació, dades econòmiques, credencials, identificadors oficials o dades de menors no són sempre categories especials, però poden implicar un risc elevat.
+- El risc també depèn del volum, la precisió, les combinacions, l'accessibilitat, la durada, el context i les conseqüències.
 
----
+## Actors
+
+- **Responsable:** decideix les finalitats i els mitjans.
+- **Encarregat:** tracta dades per compte del responsable seguint-ne les instruccions.
+- **DPD:** assessora i supervisa amb independència en els casos en què existeix aquesta figura; no és obligatori en totes les organitzacions.
+
+## Drets
+
+Accés, rectificació, supressió, oposició, limitació, portabilitat i garanties davant determinades decisions automatitzades. No són absoluts. Com a regla general, les sol·licituds s'han d'atendre en un mes, ampliable dos mesos més quan estigui justificat i se n'informi dins del primer mes.
+
+## Per a desenvolupadors
+
+- Definir finalitat, dades necessàries, accessos i termini abans de programar.
+- Aplicar protecció de dades des del disseny i per defecte.
+- Usar dades sintètiques en proves sempre que sigui possible.
+- Aplicar mínim privilegi, identitats individuals i revisió de permisos.
+- Protegir trànsit, emmagatzematge, claus, contrasenyes i còpies segons el risc.
+- No desar secrets, tokens ni formularis complets als *logs*.
+- Dissenyar l'accés, la rectificació, la limitació, l'exportació i la supressió.
+- Revisar proveïdors, subencarregats, ubicacions i transferències.
+- Documentar i provar les mesures.
+
+## Violació de la seguretat de les dades personals
+
+Pot afectar:
+
+- **confidencialitat:** accés o revelació no autoritzats;
+- **integritat:** alteració no autoritzada;
+- **disponibilitat:** destrucció, pèrdua o indisponibilitat.
+
+Cal escalar, contenir, preservar evidències, analitzar i documentar. El responsable notifica l'autoritat si és probable que hi hagi risc, si és possible dins de les 72 hores des que en té constància. Si és probable un risc alt, també comunica la violació a les persones afectades, llevat de les excepcions aplicables.
+
+> **Idea clau:** no es protegeixen bases de dades en abstracte; es protegeixen les persones davant les conseqüències de l'ús de les seves dades.
