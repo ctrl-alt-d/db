@@ -19,10 +19,16 @@ Aquests entorns es poden executar directament dins docker o dins docker compose:
 
 * SGBD Base de dades: PostgreSQL
 * Usuari: postgres
-* Base de dades: posgres
+* Base de dades: pagila
 * Password: 123456
 * url: https://github.com/devrimgunduz/pagila
 * Temàtica: Videoclub
+
+Instruccions:
+
+1. Clonar el repositori
+2. A la carpeta fer `docker compose up`
+3. Connectar-nos amb les credencials.
 
 ### Accidents amb víctimes
 
@@ -32,6 +38,19 @@ Aquests entorns es poden executar directament dins docker o dins docker compose:
 * Password: 123456
 * url: https://github.com/ctrl-alt-d/AccidentsAmbVictimes
 * Temàtica: Dataset d'accidents amb víctimes a Catalunya
+
+
+Instruccions:
+
+1. Clonar el repositori
+2. A la carpeta fer executar el docker segons quina bd volguem:
+   1. PostgreSQL `docker compose --profile postgres up --build`
+   2. MySQL `docker compose --profile mysql up --build`
+   3. SQL Server (Azure SQL Edge) `docker compose --profile sqlserver up --build`
+3. Connectar-nos amb les credencials segons base de dades (consultar la web).
+
+Nota: És només una taula
+
 
 ### NorthWind (postgres)
 

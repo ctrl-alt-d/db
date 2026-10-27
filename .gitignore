@@ -6,6 +6,8 @@ __pycache__/
 examen*.md
 examen*.pdf
 
+.DS_Store
+
 # C extensions
 *.so
 
