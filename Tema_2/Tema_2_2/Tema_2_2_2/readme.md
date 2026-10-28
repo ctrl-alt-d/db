@@ -60,6 +60,7 @@ Nota: És només una taula
 * Password: northwind
 * url: https://github.com/bradymholt/docker-postgresql-northwind
 * Temàtica: empresa de comerç majorista
+* Engegar amb docker: `docker run --rm -it -p 5432:5432 --name postgres-northwind bradymholt/postgres-northwind:latest`
 
 
 ## Index
