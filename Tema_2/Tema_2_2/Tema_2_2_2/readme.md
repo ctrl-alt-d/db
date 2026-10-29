@@ -66,9 +66,9 @@ Nota: És només una taula
 ## Index
 
 * [Conceptes d'àlgebra relacional (selecció, projecció)](./01_algebra.md)
-* [Select senzilla](./02_intro_select.md)
-* [Introduint Where](./03_where.md)
-* [Introduint Order By](./04_order_by.md)
+* [Select senzilla](./02_intro_select.md) | [Exercicis](./02_intro_select_exercicis.md)
+* [Introduint Where](./03_where.md) | [Exercicis](./03_where_exercicis.md)
+* [Introduint Order By](./04_order_by.md) | [Exercicis](./04_order_by_exercicis.md)
 * [Introduint funcions d'agregació](./05_funcions_agregacio.md)
 * [Introduint Group By](./06_group_by.md)
 * [Introduint funcions d'agregació sobre grups](./07_agregacio_grups.md)
