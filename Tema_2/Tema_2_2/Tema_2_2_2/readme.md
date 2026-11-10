@@ -63,18 +63,17 @@ Nota: És només una taula
 * Engegar amb docker: `docker run --rm -it -p 5432:5432 --name postgres-northwind bradymholt/postgres-northwind:latest`
 
 
-## Index
+## Índex
 
 * [Conceptes d'àlgebra relacional (selecció, projecció)](./01_algebra.md)
 * [Select senzilla](./02_intro_select.md) | [Exercicis](./02_intro_select_exercicis.md)
 * [Introduint Where](./03_where.md) | [Exercicis](./03_where_exercicis.md)
 * [Introduint Order By](./04_order_by.md) | [Exercicis](./04_order_by_exercicis.md)
 * [Introduint funcions d'agregació](./05_funcions_agregacio.md)
-* [Introduint Group By](./06_group_by.md)
-* [Introduint funcions d'agregació sobre grups](./07_agregacio_grups.md)
-* [Introduint Having](./08_having.md)
-* [Conceptes d'àlgebra relacional (producte cartesià)](./09_algebra_II.md)
-* [Introduint Joins](./10_joins.md)
-* [Conceptes d'àlgebra relacional (unions, interseccions, diferències)](./11_algebra_III.md)
-* [Introduint Subconsultes](./12_subconsultes.md)
-* [Introduint Unions i altres operacions avançades](./13_unions.md)
+* [Introduint Group By](./06_group_by.md) | [Exercicis](./06_group_by_exercicis.md)
+* [Introduint Having](./07_having.md) | [Exercicis](./07_having_exercicis.md)
+* [Conceptes d'àlgebra relacional (producte cartesià)](./08_algebra_II.md)
+* [Introduint Joins](./09_joins.md) | [Exercicis](./09_joins_exercicis.md)
+* [Conceptes d'àlgebra relacional (unions, interseccions, diferències)](./10_algebra_III.md)
+* [Introduint Subconsultes](./11_subconsultes.md)
+* [Introduint Unions i altres operacions avançades](./12_unions.md)

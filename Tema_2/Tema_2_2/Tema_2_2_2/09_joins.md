@@ -103,6 +103,10 @@ FULL OUTER JOIN raça r ON g.raça = r.id;
 Els gossos sense raça definida tindran `nom_raça` a NULL, i les races sense cap gos tindran `nom_gos` a NULL.
 
 
+## Exercicis
+
+Practica amb els [exercicis de JOIN amb Northwind](./09_joins_exercicis.md), amb exemples resolts i activitats per resoldre.
+
 ## Resum
 
 - **INNER JOIN**: només coincidències a ambdues taules.

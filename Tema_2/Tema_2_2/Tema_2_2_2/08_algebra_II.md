@@ -165,4 +165,4 @@ En aquesta sessió hem après:
 
 ---
 
-[Anterior: Having](./08_having.md) | [Següent: Joins](./10_joins.md) | [Torna a l'índex](./readme.md)
+[Anterior: Having](./07_having.md) | [Següent: Joins](./09_joins.md) | [Torna a l'índex](./readme.md)

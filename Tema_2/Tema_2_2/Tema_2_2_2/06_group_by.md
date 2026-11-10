@@ -85,6 +85,10 @@ FROM alumnes
 GROUP BY curs, edat;
 ```
 
+## Exercicis
+
+Practica amb els [exercicis de GROUP BY amb Northwind](./06_group_by_exercicis.md), amb exemples resolts i activitats per resoldre.
+
 ## Resum
 
 La clàusula `GROUP BY` és essencial per agrupar dades i aplicar funcions d'agregació sobre cada grup. Permet obtenir informació resumida i estadístiques per categories o grups dins les taules. Recorda: totes les columnes del SELECT que no són agregades han d'estar al GROUP BY.

@@ -49,6 +49,10 @@ GROUP BY curs
 HAVING COUNT(*) > 2;
 ```
 
+## Exercicis
+
+Practica amb els [exercicis de HAVING amb Northwind](./07_having_exercicis.md), amb exemples resolts i activitats per resoldre.
+
 ## Resum
 
 La clàusula `HAVING` és imprescindible per posar condicions sobre grups i resultats agregats. S'utilitza sempre després de `GROUP BY` i permet obtenir resultats més precisos en consultes amb agregacions.

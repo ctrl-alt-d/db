@@ -273,4 +273,4 @@ En aquesta sessió hem après:
 
 ---
 
-[Anterior: Joins](./10_joins.md) | [Següent: Unions i operacions avançades](./12_unions.md) | [Torna a l'índex](./readme.md)
+[Anterior: Joins](./09_joins.md) | [Següent: Subconsultes](./11_subconsultes.md) | [Torna a l'índex](./readme.md)

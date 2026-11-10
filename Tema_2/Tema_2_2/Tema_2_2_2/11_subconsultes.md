@@ -575,4 +575,4 @@ Les subconsultes són una eina poderosa que permet resoldre problemes complexos 
 
 ---
 
-[Anterior: Àlgebra relacional III](./11_algebra_III.md) | [Següent: Unions i operacions avançades](./13_unions.md) | [Torna a l'índex](./readme.md)
+[Anterior: Àlgebra relacional III](./10_algebra_III.md) | [Següent: Unions i operacions avançades](./12_unions.md) | [Torna a l'índex](./readme.md)
