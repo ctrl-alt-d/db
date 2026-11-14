@@ -56,6 +56,17 @@ SELECT SUM(edat)
 FROM alumnes;
 ```
 
+## Agregar expressions calculades per fila
+
+L'argument d'un agregat també pot ser una expressió calculada per fila. Per exemple, per sumar l'import brut de totes les línies de comanda registrades:
+
+```sql
+SELECT SUM(unit_price * quantity) AS import_brut
+FROM order_details;
+```
+
+En aquest exemple es resumeixen totes les línies de la taula; per obtenir un import per comanda caldrà agrupar per `order_id`. `SUM(unit_price * quantity)` no equival, en general, a `SUM(unit_price) * SUM(quantity)`: primer cal calcular l'import de cada línia i després sumar-lo.
+
 ## Exemple amb AVG
 
 Mitjana d'edat dels alumnes:
@@ -220,6 +231,8 @@ FROM alumnes;
 En aquest exemple, assignar una edat de zero anys als alumnes amb edat desconeguda altera el significat de la mitjana. **Només hem de substituir `NULL` per un valor quan el context ho justifiqui.** Si no hi ha cap fila, `AVG(COALESCE(edat, 0))` també retorna `NULL`: no hi ha cap fila en què es pugui fer la substitució.
 
 ## Exercicis per practicar
+
+Per treballar amb Northwind, consulta els [exercicis de funcions d'agregació](./05_funcions_agregacio_exercicis.md), amb exemples resolts i activitats per resoldre.
 
 Utilitza la taula fictícia anterior i intenta resoldre aquests exercicis abans d'executar les consultes:
 

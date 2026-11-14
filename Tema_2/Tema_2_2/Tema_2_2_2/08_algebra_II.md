@@ -86,6 +86,20 @@ WHERE Clients.id = Comandes.client_id;
 
 Això és essencialment un **JOIN**, que veurem en detall en la propera sessió.
 
+### Afegir una projecció i més condicions
+
+Per conservar només alguns atributs, projectem després de seleccionar les coincidències. Aquest patró expressa una composició interna (`INNER JOIN`) amb els operadors bàsics:
+
+`π_{Clients.nom, Comandes.id}(σ_{Clients.id = Comandes.client_id ∧ Comandes.import > 100}(Clients × Comandes))`
+
+Llegim l'expressió de dins cap enfora: combinem les relacions, seleccionem les parelles que corresponen i superen el filtre, i conservem els atributs demanats. Els noms qualificats, com ara `Clients.id`, distingeixen atributs amb el mateix nom de relacions diferents.
+
+Amb tres relacions, cal incloure totes les condicions d'enllaç. Per exemple, si `Comandes` té `client_id` i `LíniesComanda` té `comanda_id`:
+
+`π_{Clients.nom, LíniesComanda.producte_id}(σ_{Clients.id = Comandes.client_id ∧ Comandes.id = LíniesComanda.comanda_id}(Clients × Comandes × LíniesComanda))`
+
+Ometre una condició mantindria combinacions que no corresponen. Aquestes expressions tenen semàntica de conjunts: la projecció elimina duplicats. En SQL, afegeix `DISTINCT` si necessites reproduir aquesta eliminació.
+
 ## Exemple pràctic
 
 ### Cas d'ús: Llistat de disponibilitat
@@ -117,9 +131,7 @@ Després podríem afegir dates i hores per crear un calendari complet de disponi
 ## Propietats del producte cartesià
 
 ### Commutativitat
-R × S ≠ S × R (tècnicament)
-
-Nota: El resultat conté les mateixes dades però l'ordre de les columnes és diferent.
+El producte cartesià és commutatiu si considerem els atributs identificats pel seu nom i ignorem l'ordre de presentació de les columnes. En SQL, `SELECT * FROM R CROSS JOIN S` i `SELECT * FROM S CROSS JOIN R` presenten les columnes en un ordre diferent. Cal qualificar o reanomenar els atributs que tinguin el mateix nom per evitar ambigüitats.
 
 ### Associativitat
 (R × S) × T = R × (S × T)
@@ -137,7 +149,7 @@ Podem fer productes cartesians de múltiples taules en qualsevol ordre.
 
 - Clients amb 1.000 files × Productes amb 10.000 files = **10.000.000 de files!**
 - Això pot bloquejar la base de dades
-- Sempre hauríem d'utilitzar JOINs amb condicions en lloc de productes cartesians purs
+- Utilitza `CROSS JOIN` quan vulguis totes les combinacions i una composició amb condició quan només vulguis les correspondències.
 
 ## Exercicis pràctics
 

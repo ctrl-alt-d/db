@@ -20,13 +20,15 @@ FROM taula
 WHERE columna operador (SELECT columna FROM taula WHERE condició);
 ```
 
-La subconsulta va entre parèntesis i s'executa abans que la consulta principal.
+La subconsulta va entre parèntesis. Per entendre una subconsulta no correlacionada, podem calcular-ne primer el resultat i utilitzar-lo a la consulta externa. Aquest és un model de raonament: l'optimitzador decideix com executar realment la consulta completa.
 
 ## Tipus de subconsultes
 
 ### 1. Subconsultes que retornen un sol valor (escalar)
 
-Aquestes subconsultes retornen un únic valor i es poden utilitzar amb operadors de comparació (`=`, `>`, `<`, etc.).
+Una subconsulta escalar retorna una columna i, com a màxim, una fila. Es pot utilitzar amb operadors de comparació (`=`, `>`, `<`, etc.). Si no retorna cap fila, el seu valor és `NULL`; si en retorna més d'una, PostgreSQL dona error.
+
+Una subconsulta amb `AVG`, `MAX` o `COUNT` sense `GROUP BY` retorna una sola fila. Si no hi ha valors per agregar, `AVG` i `MAX` retornen `NULL`, mentre que `COUNT` retorna `0`. Una comparació com `preu > NULL` dona un resultat desconegut i no supera el filtre `WHERE`.
 
 #### Exemple 1: Trobar productes més cars que la mitjana
 
@@ -58,14 +60,14 @@ Comprova si un valor està dins d'un conjunt de valors.
 
 ```sql
 -- Trobar clients que han fet comandes
-SELECT nom, cognom
+SELECT id, nom, cognom
 FROM Clients
 WHERE id IN (SELECT client_id FROM Comandes);
 ```
 
 **Equivalent amb JOIN:**
 ```sql
-SELECT DISTINCT c.nom, c.cognom
+SELECT DISTINCT c.id, c.nom, c.cognom
 FROM Clients c
 INNER JOIN Comandes co ON c.id = co.client_id;
 ```
@@ -77,18 +79,22 @@ INNER JOIN Comandes co ON c.id = co.client_id;
 SELECT nom, categoria_id
 FROM Productes
 WHERE categoria_id IN (
-    SELECT id
-    FROM Categories
-    WHERE (SELECT COUNT(*) FROM Productes WHERE categoria_id = Categories.id) > 10
+    SELECT categoria_id
+    FROM Productes
+    WHERE categoria_id IS NOT NULL
+    GROUP BY categoria_id
+    HAVING COUNT(*) > 10
 );
 ```
+
+La subconsulta retorna una columna amb les categories seleccionades després d'agrupar. El `WHERE` exterior comprova si cada producte pertany a alguna d'aquestes categories. Els duplicats a la subconsulta no canvien la comprovació de pertinença d'`IN`.
 
 #### Operador ANY
 
 Comprova si la condició és certa per ALMENYS UN dels valors retornats.
 
 ```sql
--- Trobar productes més cars que QUALSEVOL producte de la categoria 'Ofertes'
+-- Trobar productes més cars que almenys un producte de la categoria 'Ofertes'
 SELECT nom, preu
 FROM Productes
 WHERE preu > ANY (
@@ -98,7 +104,7 @@ WHERE preu > ANY (
 );
 ```
 
-Això és equivalent a ser més car que el producte MÉS BARAT de 'Ofertes'.
+Si el conjunt de referència no és buit i tots els seus preus són no nuls, `> ANY` equival a superar-ne el mínim. No significa superar tots els preus.
 
 #### Operador ALL
 
@@ -115,11 +121,23 @@ WHERE preu > ALL (
 );
 ```
 
-Això és equivalent a ser més car que el producte MÉS CAR de 'Ofertes'.
+Si el conjunt de referència no és buit i tots els seus preus són no nuls, `> ALL` equival a superar-ne el màxim.
+
+#### ANY i ALL amb conjunts buits o valors nuls
+
+| Situació | `preu > ANY (subconsulta)` | `preu > ALL (subconsulta)` |
+| --- | --- | --- |
+| La subconsulta no retorna cap fila | `FALSE`: no hi ha cap valor que satisfaci la comparació. | `TRUE`: no hi ha cap valor que la contradigui. |
+| Hi ha almenys una comparació certa | `TRUE`, encara que hi hagi altres comparacions amb `NULL`. | Cal examinar les altres comparacions. |
+| Hi ha almenys una comparació falsa | Cal examinar les altres comparacions. | `FALSE`, encara que hi hagi altres comparacions amb `NULL`. |
+
+Si `ANY` no troba cap comparació certa i alguna és desconeguda, el resultat és `NULL`. Si `ALL` no troba cap comparació falsa i alguna és desconeguda, també és `NULL`. Per treballar només amb preus coneguts, exclou els nuls amb `IS NOT NULL` tant a la consulta externa com a la subconsulta.
+
+`WHERE 1 = 0` permet provar expressament el cas d'un conjunt buit. Les equivalències amb `MIN` i `MAX` no s'hi poden aplicar sense matisos: aquests agregats retornen `NULL` quan no hi ha valors.
 
 ### 3. Subconsultes correlacionades
 
-Una subconsulta correlacionada fa referència a columnes de la consulta externa. S'executa una vegada per cada fila de la consulta externa.
+Una subconsulta correlacionada fa referència a columnes de la consulta externa. Per interpretar-la, considerem el seu resultat per a cada fila externa; això no obliga l'optimitzador a executar-la físicament una vegada per fila.
 
 #### Exemple: Empleats que guanyen més que la mitjana del seu departament
 
@@ -149,9 +167,11 @@ WHERE preu = (
 );
 ```
 
+La condició `p2.categoria = p1.categoria` limita l'agregat a la categoria de la fila externa. Si dos productes comparteixen el preu màxim, tots dos compleixen la igualtat: no cal triar-ne un amb `LIMIT 1`. Per excloure productes sense categoria o sense preu conegut, afegeix `p1.categoria IS NOT NULL` i `p1.preu IS NOT NULL` al filtre exterior.
+
 ### 4. Subconsultes a la clàusula FROM
 
-Les subconsultes poden actuar com a taules temporals.
+Una subconsulta al `FROM` produeix una **taula derivada** (*derived table*), que la consulta externa pot consultar com una relació. No crea una taula temporal desada a la base de dades.
 
 ```sql
 -- Trobar categories amb preu mitjà superior a 100
@@ -164,7 +184,20 @@ FROM (
 WHERE preu_mitjà > 100;
 ```
 
-**Important:** Quan utilitzem una subconsulta a FROM, hem de donar-li un àlies.
+Assignarem sempre un àlies a les taules derivades per identificar-ne les columnes amb claredat. PostgreSQL 16 i versions posteriors permeten ometre'l en alguns casos, però fer-lo explícit facilita la lectura i la compatibilitat amb altres gestors.
+
+Una taula derivada també permet separar dos nivells d'agregació. Per exemple, podem obtenir primer una suma per client i després calcular la mitjana d'aquests totals:
+
+```sql
+SELECT AVG(t.total_client) AS mitjana_totals
+FROM (
+    SELECT client_id, SUM(import) AS total_client
+    FROM Comandes
+    GROUP BY client_id
+) AS t;
+```
+
+La consulta interna retorna una fila per client amb comandes; l'externa retorna una sola fila. `AVG(import)` sobre `Comandes` calcularia, en canvi, la mitjana per comanda. No podem substituir aquests dos nivells per `AVG(SUM(import))` dins del mateix nivell d'agregació.
 
 #### Exemple complex: Vendes per trimestre
 
@@ -173,9 +206,9 @@ SELECT trimestre, SUM(total) AS vendes_totals
 FROM (
     SELECT 
         CASE 
-            WHEN MONTH(data) BETWEEN 1 AND 3 THEN 'Q1'
-            WHEN MONTH(data) BETWEEN 4 AND 6 THEN 'Q2'
-            WHEN MONTH(data) BETWEEN 7 AND 9 THEN 'Q3'
+            WHEN EXTRACT(MONTH FROM data) BETWEEN 1 AND 3 THEN 'Q1'
+            WHEN EXTRACT(MONTH FROM data) BETWEEN 4 AND 6 THEN 'Q2'
+            WHEN EXTRACT(MONTH FROM data) BETWEEN 7 AND 9 THEN 'Q3'
             ELSE 'Q4'
         END AS trimestre,
         import AS total
@@ -183,6 +216,8 @@ FROM (
 ) AS comandes_per_trimestre
 GROUP BY trimestre;
 ```
+
+En PostgreSQL, `EXTRACT(MONTH FROM data)` extreu el número de mes. `CASE` avalua les condicions en ordre i retorna el valor del primer `WHEN` cert, o el d'`ELSE` si cap no ho és. Aquest exemple combina els mateixos trimestres de tots els anys; per conservar l'any en un resum temporal, consulta l'agrupació amb `date_trunc` al tema de [GROUP BY](./06_group_by.md#agrupar-per-una-expressió-o-per-mes).
 
 ### 5. Subconsultes a la clàusula SELECT
 
@@ -208,6 +243,8 @@ SELECT
      WHERE co.client_id = c.id) AS num_comandes
 FROM Clients c;
 ```
+
+La subconsulta amb `COUNT(*)`, sense `GROUP BY`, retorna una sola fila fins i tot si el client no té comandes. Per això mostra `0` i no cal substituir un valor nul amb `COALESCE`. Un àlies com `num_comandes` es pot utilitzar a l'`ORDER BY` de la consulta externa.
 
 ## Operador EXISTS
 
@@ -253,6 +290,35 @@ WHERE NOT EXISTS (
 );
 ```
 
+### Una subconsulta EXISTS també pot contenir JOIN
+
+Una subconsulta pot consultar diverses taules. En Northwind, `orders` conté la capçalera i la data de la comanda; `order_details` en conté les línies i els productes. Les dues taules es relacionen per `order_id`.
+
+Per exemple, podem cercar els clients que no tenen cap comanda amb una línia de 50 unitats o més:
+
+```sql
+SELECT c.customer_id, c.company_name
+FROM customers AS c
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM orders AS o
+    INNER JOIN order_details AS od ON od.order_id = o.order_id
+    WHERE o.customer_id = c.customer_id
+      AND od.quantity >= 50
+)
+ORDER BY c.customer_id ASC;
+```
+
+L'`ON` relaciona les taules internes. La condició `o.customer_id = c.customer_id` correlaciona la subconsulta amb el client exterior. El filtre addicional defineix quines coincidències volem descartar. Si la pregunta es refereix a un període, el filtre de data també ha d'anar dins de la subconsulta, sobre `o.order_date`.
+
+Per expressar «no hi ha cap compra des de X», cal comprovar l'absència de compres amb data igual o posterior a X. Trobar una compra anterior a X no és suficient: el mateix producte pot tenir també compres posteriors.
+
+### NOT IN i els valors NULL
+
+`NOT IN` i `NOT EXISTS` no són intercanviables en tots els casos. Per exemple, `5 NOT IN (1, NULL)` dona `NULL`: no podem assegurar que el valor desconegut sigui diferent de 5. Una condició desconeguda no supera el `WHERE`.
+
+Si volem comparar identificadors coneguts amb `NOT IN`, hem d'excloure els nuls de la subconsulta i, si escau, de l'expressió externa. Amb `NOT EXISTS`, formulem directament la condició d'igualtat que descartaria la fila exterior. En tots dos casos cal decidir què significa un identificador nul en el problema que estem resolent.
+
 ## Comparació: Subconsultes vs JOINs
 
 Moltes subconsultes es poden reescriure amb JOINs i viceversa.
@@ -261,14 +327,14 @@ Moltes subconsultes es poden reescriure amb JOINs i viceversa.
 
 **Amb subconsulta:**
 ```sql
-SELECT nom, cognom
+SELECT id, nom, cognom
 FROM Clients
 WHERE id IN (SELECT client_id FROM Comandes);
 ```
 
 **Amb JOIN:**
 ```sql
-SELECT DISTINCT c.nom, c.cognom
+SELECT DISTINCT c.id, c.nom, c.cognom
 FROM Clients c
 INNER JOIN Comandes co ON c.id = co.client_id;
 ```
@@ -313,7 +379,7 @@ Assumint les taules:
 ```sql
 SELECT nom, raça
 FROM gossos
-WHERE raça = (
+WHERE raça IN (
     SELECT raça
     FROM gossos
     GROUP BY raça
@@ -327,12 +393,14 @@ WHERE raça = (
 ```sql
 SELECT g1.nom, g1.raça, g1.data_naixement
 FROM gossos g1
-WHERE g1.data_naixement < (
-    SELECT AVG(g2.data_naixement)
+WHERE CURRENT_DATE - g1.data_naixement > (
+    SELECT AVG(CURRENT_DATE - g2.data_naixement)
     FROM gossos g2
     WHERE g2.raça = g1.raça
 );
 ```
+
+Aquí `data_naixement` és de tipus `date`: `CURRENT_DATE - data_naixement` calcula l'edat en dies. Agreguem aquest nombre perquè PostgreSQL no defineix `AVG(date)`.
 
 ### Exemple 3: Races que tenen més de 5 gossos
 
@@ -367,7 +435,7 @@ Podem tenir subconsultes dins de subconsultes (fins a diversos nivells, tot i qu
 -- Trobar productes de la mateixa categoria que el producte més car
 SELECT nom, categoria, preu
 FROM Productes
-WHERE categoria = (
+WHERE categoria IN (
     SELECT categoria
     FROM Productes
     WHERE preu = (
@@ -379,31 +447,32 @@ WHERE categoria = (
 
 ## Consideracions de rendiment
 
-1. **Les subconsultes correlacionades** poden ser lentes perquè s'executen múltiples vegades
-2. En molts casos, els **JOINs són més eficients** que les subconsultes
-3. Utilitzar **EXISTS** en lloc de **IN** pot ser més ràpid amb grans volums de dades
-4. Amb **PostgreSQL i MySQL moderns**, l'optimitzador sovint converteix subconsultes en JOINs automàticament
+El rendiment depèn de les dades, els índexs i el pla d'execució. No es pot afirmar, només per la sintaxi, que un `JOIN` sigui més ràpid que una subconsulta o que `EXISTS` sigui més ràpid que `IN`.
+
+L'optimitzador pot transformar aquestes consultes i evitar càlculs repetits. Primer comprova que expressen la mateixa pregunta i tracten els duplicats i els nuls de la mateixa manera. Després pots comparar-ne els plans amb `EXPLAIN`; no cal fer aquesta anàlisi per resoldre les pràctiques.
 
 ### Optimització: EXISTS vs IN
 
-**Menys eficient amb moltes dades:**
+**Comprovació de pertinença amb IN:**
 ```sql
 SELECT nom FROM Clients
 WHERE id IN (SELECT client_id FROM Comandes);
 ```
 
-**Més eficient:**
+**Comprovació d'existència amb EXISTS:**
 ```sql
 SELECT nom FROM Clients c
 WHERE EXISTS (SELECT 1 FROM Comandes co WHERE co.client_id = c.id);
 ```
+
+Aquestes dues consultes expressen una comprovació d'existència per a identificadors de client no nuls. Tria la forma més clara; qualsevol diferència de rendiment s'ha de mesurar.
 
 ## Errors comuns
 
 ### ❌ Error 1: Subconsulta retorna més d'un valor
 
 ```sql
--- ERROR si hi ha més d'un empleat amb salari màxim
+-- ERROR si la subconsulta retorna més d'una fila.
 SELECT nom
 FROM Empleats
 WHERE departament = (SELECT departament FROM Empleats WHERE salari > 50000);
@@ -416,33 +485,29 @@ FROM Empleats
 WHERE departament IN (SELECT departament FROM Empleats WHERE salari > 50000);
 ```
 
-### ❌ Error 2: Oblidar l'àlies en subconsulta a FROM
+### ❌ Error 2: Referenciar una taula derivada amb un àlies inexistent
 
 ```sql
--- ERROR: falta àlies
-SELECT categoria, preu_mitjà
+-- ERROR: no s'ha definit l'àlies t.
+SELECT t.categoria, t.preu_mitjà
 FROM (SELECT categoria, AVG(preu) AS preu_mitjà FROM Productes GROUP BY categoria);
 ```
 
 **Solució:**
 ```sql
-SELECT categoria, preu_mitjà
+SELECT t.categoria, t.preu_mitjà
 FROM (SELECT categoria, AVG(preu) AS preu_mitjà FROM Productes GROUP BY categoria) AS t;
 ```
 
-### ❌ Error 3: Comparar amb NULL incorrectament
+### ❌ Error 3: Tractar un resultat NULL com si fos zero
 
-```sql
--- NO funciona si la subconsulta retorna NULL
-WHERE columna = (SELECT ... );
-```
+Si una subconsulta amb `AVG` no té valors per calcular la mitjana, retorna `NULL`. Una comparació amb aquest resultat és desconeguda i no selecciona la fila. Això és diferent de comparar amb zero.
 
-**Solució:** Utilitzar IS NULL o COALESCE
-```sql
-WHERE columna = COALESCE((SELECT ... ), valor_per_defecte);
-```
+Utilitza `IS NULL` si vols comprovar explícitament l'absència de valor. Utilitza `COALESCE` només si el context justifica un valor alternatiu: no és una correcció automàtica aplicable a qualsevol subconsulta.
 
 ## Exercicis pràctics
+
+Per treballar amb Northwind, consulta els [exercicis de subconsultes](./11_subconsultes_exercicis.md), amb exemples resolts i activitats per resoldre.
 
 Assumeix les següents taules:
 
@@ -572,6 +637,12 @@ En aquesta sessió hem après:
 - **Errors comuns** i com evitar-los
 
 Les subconsultes són una eina poderosa que permet resoldre problemes complexos de manera elegant. Combinades amb JOINs, GROUP BY i altres clàusules, permeten fer consultes molt sofisticades.
+
+## Referències
+
+- [PostgreSQL: expressions amb subconsultes, EXISTS, IN, ANY i ALL](https://www.postgresql.org/docs/current/functions-subquery.html).
+- [PostgreSQL: SELECT i taules derivades](https://www.postgresql.org/docs/current/sql-select.html).
+- [PostgreSQL: operacions amb dates](https://www.postgresql.org/docs/current/functions-datetime.html).
 
 ---
 

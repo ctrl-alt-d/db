@@ -11,7 +11,9 @@ Aquestes operacions tracten les relacions com a conjunts matemàtics i permeten 
 Per aplicar operacions de conjunts, les dues relacions han de ser **compatibles**:
 - Han de tenir el **mateix nombre de columnes**
 - Les columnes corresponents han de tenir **tipus de dades compatibles**
-- Els noms de les columnes no cal que coincideixin (però és recomanable)
+- En SQL, els noms de les columnes no cal que coincideixin: la correspondència s'estableix per posició. En les expressions d'àlgebra relacional, utilitzarem esquemes amb els mateixos atributs o els reanomenarem perquè siguin compatibles.
+
+A més de comprovar els tipus, cal interpretar el significat dels atributs: unir identificadors de productes amb identificadors d'actors pot ser admissible per al gestor si tots dos són enters, però no produeix una llista amb un significat comú clar.
 
 ## Operacions de conjunts
 
@@ -199,8 +201,13 @@ SELECT user_id FROM Editors;
 ## Propietats de les operacions de conjunts
 
 ### Lleis de De Morgan
-- NOT (R ∪ S) ≡ (NOT R) ∩ (NOT S)
-- NOT (R ∩ S) ≡ (NOT R) ∪ (NOT S)
+
+Si fixem una relació universal compatible `U`, el complement de `R` respecte d'`U` s'expressa com `U − R`. Les lleis es poden escriure només amb diferències, unions i interseccions:
+
+- `U − (R ∪ S) = (U − R) ∩ (U − S)`.
+- `U − (R ∩ S) = (U − R) ∪ (U − S)`.
+
+No utilitzem `NOT R` com si fos una operació definida sobre relacions sense especificar aquest univers.
 
 ### Distributivitat
 - R ∩ (S ∪ T) = (R ∩ S) ∪ (R ∩ T)
@@ -221,6 +228,8 @@ Les operacions de conjunts es poden combinar amb selecció i projecció:
 
 Això ens dona tots els noms de clients de Barcelona, siguin actius o inactius.
 
+Per obtenir files presents exactament en una de dues relacions, podem combinar dues diferències: `(R − S) ∪ (S − R)`. Les relacions han de continuar sent compatibles.
+
 **Equivalent SQL:**
 ```sql
 SELECT nom FROM ClientsActius WHERE ciutat = 'Barcelona'
@@ -229,6 +238,14 @@ SELECT nom FROM ClientsInactius WHERE ciutat = 'Barcelona';
 ```
 
 ## Diferència entre SQL i àlgebra relacional pura
+
+### Recordatori: expressar INNER JOIN amb els operadors bàsics
+
+Les composicions internes dels exercicis de Sakila utilitzen el patró explicat al tema de [producte cartesià amb selecció i projecció](./08_algebra_II.md#afegir-una-projecció-i-més-condicions):
+
+`π_{atributs del resultat}(σ_{condicions d'enllaç ∧ filtres}(R × S × T))`.
+
+Identifica primer les relacions, escriu una igualtat per cada enllaç necessari i afegeix els filtres a la selecció. Finalment projecta els atributs demanats. Per exemple, connectar tres taules en cadena requereix les dues condicions que relacionen la primera amb la segona i la segona amb la tercera.
 
 En àlgebra relacional pura:
 - **Les operacions sempre eliminen duplicats**

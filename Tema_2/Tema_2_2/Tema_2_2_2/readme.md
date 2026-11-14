@@ -11,6 +11,10 @@ Les consultes ens permeten:
 - Agrupar i agregar dades
 - Combinar informació de diverses fonts
 
+## Pràctiques amb Sakila
+
+Per practicar tots els apartats d'aquest tema amb una mateixa base de dades, consulta les [pràctiques amb Sakila per a PostgreSQL](../Tema_2_2_2bis/readme.md). Hi trobaràs la guia d'instal·lació, dos exemples resolts per apartat i exercicis sense solució, inclòs un bloc específic de `GROUP BY`.
+
 ## Entorns de proves:
 
 Aquests entorns es poden executar directament dins docker o dins docker compose:
@@ -69,11 +73,11 @@ Nota: És només una taula
 * [Select senzilla](./02_intro_select.md) | [Exercicis](./02_intro_select_exercicis.md)
 * [Introduint Where](./03_where.md) | [Exercicis](./03_where_exercicis.md)
 * [Introduint Order By](./04_order_by.md) | [Exercicis](./04_order_by_exercicis.md)
-* [Introduint funcions d'agregació](./05_funcions_agregacio.md)
+* [Introduint funcions d'agregació](./05_funcions_agregacio.md) | [Exercicis](./05_funcions_agregacio_exercicis.md)
 * [Introduint Group By](./06_group_by.md) | [Exercicis](./06_group_by_exercicis.md)
 * [Introduint Having](./07_having.md) | [Exercicis](./07_having_exercicis.md)
 * [Conceptes d'àlgebra relacional (producte cartesià)](./08_algebra_II.md)
 * [Introduint Joins](./09_joins.md) | [Exercicis](./09_joins_exercicis.md)
 * [Conceptes d'àlgebra relacional (unions, interseccions, diferències)](./10_algebra_III.md)
-* [Introduint Subconsultes](./11_subconsultes.md)
-* [Introduint Unions i altres operacions avançades](./12_unions.md)
+* [Introduint Subconsultes](./11_subconsultes.md) | [Exercicis](./11_subconsultes_exercicis.md)
+* [Introduint Unions i altres operacions avançades](./12_unions.md) | [Exercicis](./12_unions_exercicis.md)

@@ -62,6 +62,8 @@ SELECT DISTINCT nom, cognom FROM Clients;
 
 Les operacions de selecció i projecció es poden combinar per crear consultes més complexes:
 
+Llegim les expressions de dins cap enfora. En text pla escriurem, per exemple, `π_{nom}(σ_{edat > 18}(Clients))`: les claus indiquen el subíndex de cada operador. Podem escriure les condicions compostes amb ∧ (conjunció, equivalent a `AND`), ∨ (disjunció, equivalent a `OR`) i ¬ (negació, equivalent a `NOT`).
+
 **Exemple 1:**
 π<sub>nom</sub>(σ<sub>edat > 18</sub>(Clients))
 
@@ -107,6 +109,8 @@ Si projectem un subconjunt d'atributs després d'una projecció més àmplia, no
 π<sub>a1,a2</sub>(σ<sub>c</sub>(R))
 
 Primer filtrem files, després seleccionem columnes. Aquesta és una de les combinacions més comunes.
+
+Si volem projectar abans de seleccionar, cal conservar tots els atributs que utilitza el filtre. Per exemple, no podem comprovar `preu > 100` després d'una projecció que només conservi `nom`: l'atribut `preu` ja no hi seria.
 
 ## Optimització de consultes
 

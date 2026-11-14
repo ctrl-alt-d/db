@@ -134,6 +134,17 @@ FROM Productes;
 | Portàtil HP | 899.00| 1085.79     |
 | Ratolí      | 12.50 | 15.13       |
 
+Els operadors `+`, `-`, `*` i `/` permeten sumar, restar, multiplicar i dividir. La multiplicació i la divisió tenen prioritat sobre la suma i la resta; utilitza parèntesis per expressar el càlcul desitjat. Per exemple, si un descompte és una fracció (`0.15` significa un 15 %), l'import net d'una línia és `preu * quantitat * (1 - descompte)`. Els càlculs amb un operand `NULL` normalment donen `NULL`; un valor desconegut no equival a zero.
+
+### Concatenar text
+
+En PostgreSQL, `||` concatena cadenes de text. Les cometes simples delimiten els literals, com ara l'espai entre nom i cognom:
+
+```sql
+SELECT nom || ' ' || cognom AS nom_complet
+FROM Clients;
+```
+
 ## Àlies de columnes (AS)
 
 Podem donar noms més descriptius a les columnes del resultat amb **AS**:
@@ -257,19 +268,17 @@ FROM Productes;
 
 ## Relació amb àlgebra relacional
 
-La sentència SELECT bàsica correspon a l'operació de **projecció** (π) de l'àlgebra relacional:
+La selecció de columnes amb `SELECT` es relaciona amb la **projecció** (π). Per reproduir-ne l'eliminació de duplicats, cal afegir `DISTINCT`:
 
 ```sql
-SELECT nom, preu FROM Productes;
+SELECT DISTINCT nom, preu FROM Productes;
 ```
 
 És equivalent a:
 
 π<sub>nom, preu</sub>(Productes)
 
-Quan fem `SELECT *`, estem projectant tots els atributs:
-
-π<sub>*</sub>(Productes)
+`SELECT *` retorna tots els atributs, però no elimina duplicats per si mateix. En àlgebra relacional, projectar tots els atributs d'una relació retorna la mateixa relació.
 
 ## Exercicis pràctics
 

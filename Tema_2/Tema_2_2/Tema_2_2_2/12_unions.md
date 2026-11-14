@@ -36,6 +36,8 @@ SELECT nom FROM professors;
 
 Retorna les files de la primera consulta que no apareixen a la segona.
 
+En PostgreSQL utilitzarem `EXCEPT`. Alguns altres gestors anomenen aquesta operació `MINUS`.
+
 ```sql
 SELECT nom FROM alumnes
 EXCEPT
@@ -46,6 +48,30 @@ SELECT nom FROM professors;
 
 - Les consultes han de tenir el mateix nombre de columnes i tipus compatibles.
 - L'ordre de les columnes ha de coincidir.
+
+La comparació es fa sobre la **fila completa**, no només sobre la primera columna. Afegir un identificador o un literal amb l'origen pot fer que dues files deixin de ser duplicades. Sense `ALL`, `INTERSECT` i `EXCEPT` també eliminen duplicats. `UNION` elimina les repeticions tant dins de cada branca com entre les branques.
+
+Per eliminar duplicats, les files amb `NULL` a les mateixes posicions i la resta de valors iguals es consideren repetides. Això no equival a fer una comparació ordinària `NULL = NULL` en un `WHERE`.
+
+## Noms de columna, ordenació i parèntesis
+
+Els noms de les columnes del resultat provenen de la primera branca. Pots definir-hi un àlies i utilitzar-lo en un únic `ORDER BY` al final:
+
+```sql
+SELECT country AS pais FROM customers
+UNION
+SELECT country FROM suppliers
+ORDER BY pais ASC NULLS LAST;
+```
+
+L'ordenació s'aplica al resultat combinat. Les operacions de conjunts no garanteixen per si mateixes cap ordre.
+
+En PostgreSQL, `INTERSECT` té prioritat sobre `UNION` i `EXCEPT`. `UNION` i `EXCEPT` s'agrupen d'esquerra a dreta quan no hi ha parèntesis. Per exemple:
+
+- `A UNION B INTERSECT C` s'interpreta com `A UNION (B INTERSECT C)`.
+- `(A UNION B) INTERSECT C` exigeix que totes les files finals també siguin a `C`.
+
+Aquí `A`, `B` i `C` representen consultes compatibles. Utilitza parèntesis per fer explícit l'ordre que respon a l'enunciat.
 
 ## Exemple pràctic
 
@@ -64,6 +90,10 @@ SELECT nom FROM alumnes
 EXCEPT
 SELECT nom FROM professors;
 ```
+
+## Exercicis
+
+Practica amb els [exercicis d'operacions de conjunts amb Northwind](./12_unions_exercicis.md), amb exemples resolts i activitats per resoldre.
 
 ## Resum
 

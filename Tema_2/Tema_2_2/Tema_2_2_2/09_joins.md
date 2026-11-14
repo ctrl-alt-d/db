@@ -103,6 +103,64 @@ FULL OUTER JOIN raça r ON g.raça = r.id;
 Els gossos sense raça definida tindran `nom_raça` a NULL, i les races sense cap gos tindran `nom_gos` a NULL.
 
 
+## Encadenar composicions entre diverses taules
+
+Cada `JOIN` incorpora una taula amb la seva condició d'enllaç. Per obtenir el client i els productes de les seves comandes, seguim `customers → orders → order_details → products`:
+
+```sql
+SELECT c.customer_id, o.order_id, p.product_id, p.product_name
+FROM customers AS c
+INNER JOIN orders AS o ON o.customer_id = c.customer_id
+INNER JOIN order_details AS od ON od.order_id = o.order_id
+INNER JOIN products AS p ON p.product_id = od.product_id;
+```
+
+Cada fila representa una línia de comanda. Un client pot aparèixer moltes vegades; no és un error de la composició. Si calculem imports històrics, utilitzem el preu de `order_details`, no necessàriament el preu actual de `products`.
+
+## Condicions ON i filtres WHERE en una composició externa
+
+L'`ON` determina quines files poden coincidir. Després, el `WHERE` filtra el resultat, incloses les files amb `NULL` que ha conservat la composició externa.
+
+```sql
+SELECT c.customer_id, o.order_id
+FROM customers AS c
+LEFT JOIN orders AS o
+    ON o.customer_id = c.customer_id
+   AND o.order_date >= DATE '1997-01-01'
+   AND o.order_date < DATE '1998-01-01';
+```
+
+Això conserva tots els clients, amb les seves comandes del 1997 si en tenen. Posar els filtres de data al `WHERE` eliminaria les files sense comanda coincident, perquè comparar la data nul·la amb un límit no dona `TRUE`.
+
+Per detectar absències amb `LEFT JOIN`, comprova `IS NULL` sobre una clau primària de la taula dreta, com ara `o.order_id`. Una altra columna nullable podria ser nul·la encara que existís la coincidència. El raonament és equivalent en un `RIGHT JOIN`, intercanviant els costats. Un `FULL JOIN` permet detectar absències a qualsevol costat.
+
+## Comptar coincidències i conservar els zeros
+
+```sql
+SELECT c.customer_id, c.company_name, COUNT(o.order_id) AS total_comandes
+FROM customers AS c
+LEFT JOIN orders AS o ON o.customer_id = c.customer_id
+GROUP BY c.customer_id, c.company_name
+ORDER BY c.customer_id ASC;
+```
+
+`COUNT(o.order_id)` compta només les comandes coincidents i dona 0 quan no n'hi ha. `COUNT(*)` també comptaria la fila amb nuls que conserva el `LEFT JOIN` i donaria 1 per a un client sense comandes.
+
+Si afegim les línies de comanda a aquesta composició, una comanda pot aparèixer diverses vegades. Abans d'agregar, comprova què representa cada fila; per comptar comandes diferents en aquell resultat, caldria `COUNT(DISTINCT o.order_id)`.
+
+## Composició d'una taula amb si mateixa
+
+Un *self join* combina dues referències a una mateixa taula. Cada referència necessita un àlies diferent. Per obtenir parelles de productes de la mateixa categoria:
+
+```sql
+SELECT p1.product_id AS producte_1, p2.product_id AS producte_2
+FROM products AS p1
+INNER JOIN products AS p2 ON p1.category_id = p2.category_id
+WHERE p1.product_id < p2.product_id;
+```
+
+La desigualtat exclou cada producte amb si mateix i conserva només una de les parelles simètriques `(A, B)` i `(B, A)`.
+
 ## Exercicis
 
 Practica amb els [exercicis de JOIN amb Northwind](./09_joins_exercicis.md), amb exemples resolts i activitats per resoldre.

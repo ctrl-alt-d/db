@@ -49,10 +49,26 @@ GROUP BY curs
 HAVING COUNT(*) > 2;
 ```
 
+## Diverses condicions, àlies i ordre de les clàusules
+
+Podem combinar condicions sobre agregats amb `AND` i `OR`. Per exemple, `HAVING COUNT(*) >= 3 AND AVG(preu) > 30` exigeix totes dues condicions sobre el mateix grup. També podem comparar expressions, com ara `HAVING COUNT(*) - COUNT(fax) > 0`, per detectar grups amb algun fax nul.
+
+Si filtrem abans amb `WHERE fax IS NULL`, el recompte ja no representa totes les files originals del grup, sinó només les que tenen el fax nul. Cal distingir «comptar totes les files i detectar-hi una absència» de «comptar només les absències».
+
+En PostgreSQL, un àlies definit al `SELECT` es pot utilitzar a l'`ORDER BY`, però no al `HAVING`: escriu `HAVING COUNT(*) >= 3`, no `HAVING total >= 3` si `total` és l'àlies d'aquell recompte.
+
+L'ordre d'escriptura de les clàusules que utilitzem és:
+
+```text
+SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY → LIMIT / OFFSET
+```
+
+Per interpretar-les, partim de les files del `FROM`, apliquem `WHERE`, formem els grups i els filtrem amb `HAVING`; finalment es projecten i s'ordenen els resultats. Una condició agregada no pot anar al `WHERE` del mateix nivell perquè aquell filtre s'aplica abans de formar els grups.
+
 ## Exercicis
 
 Practica amb els [exercicis de HAVING amb Northwind](./07_having_exercicis.md), amb exemples resolts i activitats per resoldre.
 
 ## Resum
 
-La clàusula `HAVING` és imprescindible per posar condicions sobre grups i resultats agregats. S'utilitza sempre després de `GROUP BY` i permet obtenir resultats més precisos en consultes amb agregacions.
+La clàusula `HAVING` permet posar condicions sobre grups i resultats agregats. Quan la consulta té `GROUP BY`, s'escriu després d'aquesta clàusula. També es pot utilitzar sense `GROUP BY`, tractant el conjunt de files com un únic grup.
