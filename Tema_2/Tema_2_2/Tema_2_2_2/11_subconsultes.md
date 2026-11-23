@@ -507,7 +507,7 @@ Utilitza `IS NULL` si vols comprovar explícitament l'absència de valor. Utilit
 
 ## Exercicis pràctics
 
-Per treballar amb Northwind, consulta els [exercicis de subconsultes](./11_subconsultes_exercicis.md), amb exemples resolts i activitats per resoldre.
+Per treballar amb Northwind, consulta els [exercicis de subconsultes](./Exercicis/Northwind/11_subconsultes_exercicis.md), amb exemples resolts i activitats per resoldre. També tens una [pràctica amb Sakila](./Exercicis/Sakila/11_subconsultes_exercicis.md).
 
 Assumeix les següents taules:
 

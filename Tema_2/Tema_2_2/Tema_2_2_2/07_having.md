@@ -67,7 +67,7 @@ Per interpretar-les, partim de les files del `FROM`, apliquem `WHERE`, formem el
 
 ## Exercicis
 
-Practica amb els [exercicis de HAVING amb Northwind](./07_having_exercicis.md), amb exemples resolts i activitats per resoldre.
+Practica amb els [exercicis de HAVING amb Northwind](./Exercicis/Northwind/07_having_exercicis.md), amb exemples resolts i activitats per resoldre. També tens una [pràctica amb Sakila](./Exercicis/Sakila/07_having_exercicis.md).
 
 ## Resum
 

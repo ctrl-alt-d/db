@@ -257,6 +257,8 @@ En SQL:
 
 ## Exercicis pràctics
 
+Per practicar amb una base de dades real, consulta la [pràctica amb Sakila](./Exercicis/Sakila/10_algebra_III_exercicis.md), amb exemples resolts i activitats per resoldre.
+
 1. Tenim dues taules: **ProductesEuropa** i **ProductesAsia**. Escriu consultes per:
    - Tots els productes disponibles globalment
    - Productes només a Europa

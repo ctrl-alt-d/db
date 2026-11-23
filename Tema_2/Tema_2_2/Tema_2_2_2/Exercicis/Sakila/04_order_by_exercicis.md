@@ -1,8 +1,10 @@
 # 04. ORDER BY amb Sakila
 
+> **Entorn:** si encara no tens la base de dades Sakila en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 **Objectiu:** ordenar per una o diverses columnes, establir desempats i obtenir pàgines de resultats.
 
-**Teoria:** [ORDER BY](../Tema_2_2_2/04_order_by.md). **Dades:** [esquema de Sakila](./esquema.md).
+**Teoria:** [ORDER BY](../../04_order_by.md). **Dades:** [esquema de Sakila](./esquema.md).
 
 Consulta una sola taula. Quan limitis o paginis els resultats, inclou un criteri final únic, com ara l'identificador, perquè els desempats no quedin indeterminats.
 

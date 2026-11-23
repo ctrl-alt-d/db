@@ -1,5 +1,7 @@
 # Exercicis de JOIN amb Northwind (PostgreSQL)
 
+> **Entorn:** si encara no tens la base de dades Northwind en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 ## Objectius i instruccions
 
 Practicar la combinació de taules amb `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, `FULL JOIN` i `CROSS JOIN`, i interpretar les files sense coincidència.
@@ -14,7 +16,7 @@ Treballa amb la mateixa base de dades **Northwind** de les [pràctiques anterior
 - Desa les consultes en un fitxer `.sql` i identifica cada exercici amb un comentari.
 - Un resultat buit pot ser correcte: depèn de si les dades contenen casos que compleixin les condicions. No cal modificar les dades per resoldre els exercicis.
 
-**Material de consulta:** [Introducció als JOIN](./09_joins.md), [GROUP BY](./06_group_by.md) i [Tractament de NULL i funcions d'agregació](./05_funcions_agregacio.md).
+**Material de consulta:** [Introducció als JOIN](../../09_joins.md), [GROUP BY](../../06_group_by.md) i [Tractament de NULL i funcions d'agregació](../../05_funcions_agregacio.md).
 
 ## Taules, columnes i relacions
 

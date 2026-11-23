@@ -122,6 +122,8 @@ Els gestors de bases de dades utilitzen aquestes propietats per optimitzar les c
 
 ## Exercicis pràctics
 
+Per practicar amb una base de dades real, consulta la [pràctica amb Sakila](./Exercicis/Sakila/01_algebra_exercicis.md), amb exemples resolts i activitats per resoldre.
+
 1. Tradueix a SQL:
    - π<sub>nom, email</sub>(σ<sub>ciutat='Barcelona'</sub>(Clients))
 

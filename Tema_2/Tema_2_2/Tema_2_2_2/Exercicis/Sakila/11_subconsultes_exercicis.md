@@ -1,8 +1,10 @@
 # 11. Subconsultes amb Sakila
 
+> **Entorn:** si encara no tens la base de dades Sakila en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 **Objectiu:** utilitzar una consulta dins d'una altra amb subconsultes escalars, `IN`, `EXISTS`, subconsultes correlacionades i taules derivades.
 
-**Teoria:** [Subconsultes](../Tema_2_2_2/11_subconsultes.md). **Dades:** [esquema de Sakila](./esquema.md).
+**Teoria:** [Subconsultes](../../11_subconsultes.md). **Dades:** [esquema de Sakila](./esquema.md).
 
 Utilitza subconsultes en les respostes. Una subconsulta escalar ha de retornar una columna i com a màxim una fila. En una subconsulta correlacionada, qualifica les columnes per distingir la fila exterior de les files de la subconsulta.
 

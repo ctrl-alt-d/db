@@ -1,8 +1,10 @@
 # 08. Producte cartesià amb Sakila
 
+> **Entorn:** si encara no tens la base de dades Sakila en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 **Objectiu:** interpretar el producte cartesià (×), calcular-ne la cardinalitat i relacionar-lo amb `CROSS JOIN` i amb una selecció posterior.
 
-**Teoria:** [Producte cartesià](../Tema_2_2_2/08_algebra_II.md). **Dades:** [esquema de Sakila](./esquema.md).
+**Teoria:** [Producte cartesià](../../08_algebra_II.md). **Dades:** [esquema de Sakila](./esquema.md).
 
 Escriu l'expressió d'àlgebra relacional i la consulta SQL equivalent. Qualifica les columnes quan dues taules tinguin el mateix nom de columna. En les expressions, utilitza `taula.columna` per evitar ambigüitats.
 

@@ -1,5 +1,7 @@
 # Exercicis de GROUP BY amb Northwind (PostgreSQL)
 
+> **Entorn:** si encara no tens la base de dades Northwind en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 ## Objectius i instruccions
 
 Practicar l'agrupació de files amb `GROUP BY`, calcular resums per grup i combinar l'agrupació amb `WHERE` i `ORDER BY`.
@@ -12,7 +14,7 @@ Treballa amb la mateixa base de dades **Northwind** de les pràctiques de [SELEC
 - Respecta els criteris d'ordenació i de desempat. No cal arrodonir els resultats.
 - Desa les consultes en un fitxer `.sql` i identifica cada exercici amb un comentari.
 
-**Material de consulta:** [Funcions d'agregació](./05_funcions_agregacio.md) i [Introducció a GROUP BY](./06_group_by.md).
+**Material de consulta:** [Funcions d'agregació](../../05_funcions_agregacio.md) i [Introducció a GROUP BY](../../06_group_by.md).
 
 ## Taules i columnes que utilitzarem
 

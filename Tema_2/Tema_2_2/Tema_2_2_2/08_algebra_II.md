@@ -153,6 +153,8 @@ Podem fer productes cartesians de múltiples taules en qualsevol ordre.
 
 ## Exercicis pràctics
 
+Per practicar amb una base de dades real, consulta la [pràctica amb Sakila](./Exercicis/Sakila/08_algebra_II_exercicis.md), amb exemples resolts i activitats per resoldre.
+
 1. Si tenim una taula **Colors** amb 5 files i una taula **Mides** amb 4 files, quantes files tindrà Colors × Mides?
 
 2. Escriu en àlgebra relacional: "Troba totes les combinacions de productes i proveïdors"

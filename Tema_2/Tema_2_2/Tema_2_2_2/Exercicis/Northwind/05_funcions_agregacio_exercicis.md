@@ -1,5 +1,7 @@
 # Exercicis de funcions d'agregació amb Northwind (PostgreSQL)
 
+> **Entorn:** si encara no tens la base de dades Northwind en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 ## Objectius i instruccions
 
 Practicar `COUNT`, `SUM`, `AVG`, `MIN` i `MAX`, i interpretar el tractament dels valors `NULL` i dels conjunts buits.
@@ -12,7 +14,7 @@ Treballa amb la mateixa base de dades **Northwind** de les [pràctiques anterior
 - No cal arrodonir els resultats. Escriu els decimals amb un punt.
 - Desa les consultes en un fitxer `.sql` i identifica cada exercici amb un comentari.
 
-**Material de consulta:** [Funcions d'agregació i tractament de NULL](./05_funcions_agregacio.md).
+**Material de consulta:** [Funcions d'agregació i tractament de NULL](../../05_funcions_agregacio.md).
 
 ## Taules i columnes que utilitzarem
 

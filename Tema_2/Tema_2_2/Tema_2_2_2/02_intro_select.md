@@ -282,6 +282,8 @@ SELECT DISTINCT nom, preu FROM Productes;
 
 ## Exercicis pràctics
 
+Per treballar amb Northwind, consulta els [exercicis de SELECT](./Exercicis/Northwind/02_intro_select_exercicis.md), amb exemples resolts i activitats per resoldre. També tens una [pràctica amb Sakila](./Exercicis/Sakila/02_intro_select_exercicis.md).
+
 Assumeix que tens les següents taules:
 
 **Taula Empleats:**

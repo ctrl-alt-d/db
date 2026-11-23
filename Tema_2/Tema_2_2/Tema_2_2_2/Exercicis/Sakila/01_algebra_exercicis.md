@@ -1,8 +1,10 @@
 # 01. Selecció i projecció amb Sakila
 
+> **Entorn:** si encara no tens la base de dades Sakila en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 **Objectiu:** distingir la selecció de files (σ) de la projecció de columnes (π) i combinar-les.
 
-**Teoria:** [Selecció i projecció](../Tema_2_2_2/01_algebra.md). **Dades:** [esquema de Sakila](./esquema.md).
+**Teoria:** [Selecció i projecció](../../01_algebra.md). **Dades:** [esquema de Sakila](./esquema.md).
 
 Escriu les respostes amb expressions d'àlgebra relacional. Utilitza σ per seleccionar files i π per projectar columnes; escriurem el subíndex entre claus. En l'àlgebra relacional clàssica, una relació és un conjunt: la projecció elimina duplicats.
 

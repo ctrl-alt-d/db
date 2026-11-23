@@ -1,8 +1,10 @@
 # 07. HAVING amb Sakila
 
+> **Entorn:** si encara no tens la base de dades Sakila en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 **Objectiu:** filtrar grups a partir dels resultats de les funcions d'agregació i distingir aquest filtre del que fa `WHERE`.
 
-**Teoria:** [HAVING](../Tema_2_2_2/07_having.md). **Dades:** [esquema de Sakila](./esquema.md).
+**Teoria:** [HAVING](../../07_having.md). **Dades:** [esquema de Sakila](./esquema.md).
 
 Utilitza una sola taula a cada consulta. L'ordre d'escriptura és `SELECT`, `FROM`, `WHERE`, `GROUP BY`, `HAVING`, `ORDER BY`. A `HAVING`, escriu l'expressió agregada: PostgreSQL no hi admet els àlies definits al `SELECT`.
 

@@ -163,7 +163,7 @@ La desigualtat exclou cada producte amb si mateix i conserva només una de les p
 
 ## Exercicis
 
-Practica amb els [exercicis de JOIN amb Northwind](./09_joins_exercicis.md), amb exemples resolts i activitats per resoldre.
+Practica amb els [exercicis de JOIN amb Northwind](./Exercicis/Northwind/09_joins_exercicis.md), amb exemples resolts i activitats per resoldre. També tens una [pràctica amb Sakila](./Exercicis/Sakila/09_joins_exercicis.md).
 
 ## Resum
 

@@ -119,6 +119,10 @@ Si una columna és de tipus booleà, compara-la amb `TRUE` o `FALSE`, per exempl
 
 També podem filtrar per un càlcul, com ara `unit_price * units_in_stock > 1000`. Un àlies definit al `SELECT` no està disponible al `WHERE` del mateix nivell: cal repetir-hi l'expressió. Per exemple, no podem definir `valor_estoc` al `SELECT` i utilitzar directament `WHERE valor_estoc > 1000` en aquella mateixa consulta.
 
+## Exercicis
+
+Practica amb els [exercicis de WHERE amb Northwind](./Exercicis/Northwind/03_where_exercicis.md), amb exemples resolts i activitats per resoldre. També tens una [pràctica amb Sakila](./Exercicis/Sakila/03_where_exercicis.md).
+
 ## Resum
 
 La clàusula `WHERE` és essencial per filtrar dades en les consultes SQL. Permet utilitzar una gran varietat d'operadors i combinar condicions per obtenir resultats precisos.

@@ -1,6 +1,6 @@
 # SQL Insercions
 
-En aquesta secció aprendrem a inserir files en una taula amb SQL. Ens centrarem en PostgreSQL (p. ex. Supabase), tot i que la sintaxi bàsica és molt similar a d'altres SGBD.
+En aquesta secció aprendrem a inserir files en una taula amb SQL. Ens centrarem en PostgreSQL, tot i que la sintaxi bàsica és molt similar a d'altres SGBD.
 
 ## Sintaxi bàsica
 

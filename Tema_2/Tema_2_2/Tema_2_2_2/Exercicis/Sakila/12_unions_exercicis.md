@@ -1,8 +1,10 @@
 # 12. UNION, UNION ALL, INTERSECT i EXCEPT amb Sakila
 
+> **Entorn:** si encara no tens la base de dades Sakila en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 **Objectiu:** combinar resultats compatibles, distingir el tractament dels duplicats i aplicar operacions sobre files completes.
 
-**Teoria:** [Unions i altres operacions](../Tema_2_2_2/12_unions.md). **Dades:** [esquema de Sakila](./esquema.md).
+**Teoria:** [Unions i altres operacions](../../12_unions.md). **Dades:** [esquema de Sakila](./esquema.md).
 
 Les branques han de retornar el mateix nombre de columnes, en el mateix ordre i amb tipus compatibles. `UNION`, `INTERSECT` i `EXCEPT`, sense `ALL`, eliminen duplicats. Utilitza un únic `ORDER BY` al final per ordenar el resultat complet. En PostgreSQL, `INTERSECT` té prioritat sobre `UNION` i `EXCEPT`: escriu parèntesis quan combinin operacions amb un ordre específic.
 

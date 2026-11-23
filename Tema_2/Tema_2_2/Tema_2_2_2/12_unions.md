@@ -93,7 +93,7 @@ SELECT nom FROM professors;
 
 ## Exercicis
 
-Practica amb els [exercicis d'operacions de conjunts amb Northwind](./12_unions_exercicis.md), amb exemples resolts i activitats per resoldre.
+Practica amb els [exercicis d'operacions de conjunts amb Northwind](./Exercicis/Northwind/12_unions_exercicis.md), amb exemples resolts i activitats per resoldre. També tens una [pràctica amb Sakila](./Exercicis/Sakila/12_unions_exercicis.md).
 
 ## Resum
 

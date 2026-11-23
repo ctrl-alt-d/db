@@ -1,5 +1,7 @@
 # Exercicis de WHERE amb Northwind (PostgreSQL)
 
+> **Entorn:** si encara no tens la base de dades Northwind en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 ## Objectius i instruccions
 
 Practicar el filtratge de files amb `WHERE`: comparacions, intervals amb `BETWEEN`, conjunts de valors amb `IN`, patrons de text amb `LIKE`, comprovacions de valors nuls i combinació de condicions amb `AND` i `OR`.
@@ -14,7 +16,7 @@ Treballa amb la mateixa base de dades **Northwind** de la [pràctica de SELECT](
 - Desa les consultes en un fitxer `.sql` i identifica cada exercici amb un comentari.
 - Si una consulta no retorna cap fila, revisa'n la condició i les dades. Un resultat buit no implica necessàriament un error.
 
-**Material de consulta:** [Introducció a WHERE](./03_where.md).
+**Material de consulta:** [Introducció a WHERE](../../03_where.md).
 
 ## Taules i columnes que utilitzarem
 
@@ -317,4 +319,4 @@ Abans de donar la pràctica per acabada, revisa que:
 
 ---
 
-[Torna a la teoria de WHERE](./03_where.md) | [Exercicis de SELECT](./02_intro_select_exercicis.md) | [Torna a l'índex](./readme.md)
+[Torna a la teoria de WHERE](../../03_where.md) | [Exercicis de SELECT](./02_intro_select_exercicis.md) | [Torna a l'índex](./readme.md)

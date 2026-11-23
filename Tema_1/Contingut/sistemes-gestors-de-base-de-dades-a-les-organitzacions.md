@@ -25,8 +25,8 @@ Alguns dels sistemes gestors de bases de dades més utilitzats a nivell mundial 
 
 ## Quins farem servir a classe?
 
-* Per iniciar-nos: https://supabase.com/
-* Per treballar localment: Microsoft SQL Server (dins un docker)
+* Microsoft SQL Server (dins un docker), a partir de la [Pràctica 1](./creant-una-base-de-dades-a-sql-server.md)
+* PostgreSQL (dins un docker), als exercicis de consultes
 
 ## Exercici:
 

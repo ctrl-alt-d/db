@@ -112,7 +112,7 @@ Així, el gener del 2005 i el gener del 2006 formen grups diferents. Agrupar nom
 
 ## Exercicis
 
-Practica amb els [exercicis de GROUP BY amb Northwind](./06_group_by_exercicis.md), amb exemples resolts i activitats per resoldre.
+Practica amb els [exercicis de GROUP BY amb Northwind](./Exercicis/Northwind/06_group_by_exercicis.md), amb exemples resolts i activitats per resoldre. També tens una [pràctica amb Sakila](./Exercicis/Sakila/06_group_by_exercicis.md).
 
 ## Resum
 

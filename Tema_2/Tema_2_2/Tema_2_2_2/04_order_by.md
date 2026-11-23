@@ -91,6 +91,10 @@ LIMIT 20 OFFSET 20;
 
 Primer s'ordena el resultat, després s'ometen les primeres 20 files i se'n retornen com a màxim 20. La primera pàgina utilitza `OFFSET 0` o omet aquesta clàusula. L'ordenació amb un desempat únic és necessària perquè la paginació sigui previsible quan les dades no canvien.
 
+## Exercicis
+
+Practica amb els [exercicis d'ORDER BY amb Northwind](./Exercicis/Northwind/04_order_by_exercicis.md), amb exemples resolts i activitats per resoldre. També tens una [pràctica amb Sakila](./Exercicis/Sakila/04_order_by_exercicis.md).
+
 ## Resum
 
 La clàusula `ORDER BY` permet ordenar els resultats d'una consulta SQL de manera flexible, utilitzant una o diverses columnes i especificant l'ordre ascendent o descendent.

@@ -232,7 +232,7 @@ En aquest exemple, assignar una edat de zero anys als alumnes amb edat desconegu
 
 ## Exercicis per practicar
 
-Per treballar amb Northwind, consulta els [exercicis de funcions d'agregació](./05_funcions_agregacio_exercicis.md), amb exemples resolts i activitats per resoldre.
+Per treballar amb Northwind, consulta els [exercicis de funcions d'agregació](./Exercicis/Northwind/05_funcions_agregacio_exercicis.md), amb exemples resolts i activitats per resoldre. També tens una [pràctica amb Sakila](./Exercicis/Sakila/05_funcions_agregacio_exercicis.md).
 
 Utilitza la taula fictícia anterior i intenta resoldre aquests exercicis abans d'executar les consultes:
 

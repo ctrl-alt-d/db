@@ -1,8 +1,10 @@
 # 02. SELECT amb Sakila
 
+> **Entorn:** si encara no tens la base de dades Sakila en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 **Objectiu:** seleccionar columnes, definir àlies, calcular expressions i eliminar duplicats.
 
-**Teoria:** [SELECT](../Tema_2_2_2/02_intro_select.md). **Dades:** [esquema de Sakila](./esquema.md).
+**Teoria:** [SELECT](../../02_intro_select.md). **Dades:** [esquema de Sakila](./esquema.md).
 
 Consulta una sola taula per sentència. No cal utilitzar `WHERE`, `GROUP BY` ni `JOIN`. L'ordre de les files no està garantit; en aquest apartat només fixem l'ordre de les columnes.
 

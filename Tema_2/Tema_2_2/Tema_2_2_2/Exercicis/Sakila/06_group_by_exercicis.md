@@ -1,8 +1,10 @@
 # 06. GROUP BY amb Sakila
 
+> **Entorn:** si encara no tens la base de dades Sakila en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 **Objectiu:** obtenir una fila de resum per grup, agrupar per diverses columnes i filtrar les files abans de resumir-les.
 
-**Teoria:** [GROUP BY](../Tema_2_2_2/06_group_by.md) i [funcions d'agregació](../Tema_2_2_2/05_funcions_agregacio.md). **Dades:** [esquema de Sakila](./esquema.md).
+**Teoria:** [GROUP BY](../../06_group_by.md) i [funcions d'agregació](../../05_funcions_agregacio.md). **Dades:** [esquema de Sakila](./esquema.md).
 
 Utilitza una sola taula a cada consulta. No cal utilitzar `JOIN`, subconsultes ni `HAVING`. En aquest apartat treballem amb els identificadors dels grups; més endavant hi afegirem noms procedents d'altres taules.
 

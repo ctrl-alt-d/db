@@ -1,8 +1,10 @@
 # 10. Operacions de conjunts i composicions en àlgebra relacional amb Sakila
 
+> **Entorn:** si encara no tens la base de dades Sakila en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 **Objectiu:** raonar sobre unió (∪), intersecció (∩) i diferència (−) amb conjunts compatibles, i expressar composicions internes (`INNER JOIN`) com una projecció d'una selecció d'un producte cartesià.
 
-**Teoria:** [Operacions de conjunts](../Tema_2_2_2/10_algebra_III.md), [producte cartesià](../Tema_2_2_2/08_algebra_II.md) i [JOIN](../Tema_2_2_2/09_joins.md). **Dades:** [esquema de Sakila](./esquema.md).
+**Teoria:** [Operacions de conjunts](../../10_algebra_III.md), [producte cartesià](../../08_algebra_II.md) i [JOIN](../../09_joins.md). **Dades:** [esquema de Sakila](./esquema.md).
 
 Treballarem amb aquests dos conjunts d'identificadors de pel·lícules:
 

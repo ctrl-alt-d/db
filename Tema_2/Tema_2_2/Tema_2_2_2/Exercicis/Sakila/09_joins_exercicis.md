@@ -1,8 +1,10 @@
 # 09. JOIN amb Sakila
 
+> **Entorn:** si encara no tens la base de dades Sakila en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 **Objectiu:** combinar taules mitjançant claus, conservar files sense coincidència i evitar recomptes incorrectes en relacions d'una fila amb moltes files.
 
-**Teoria:** [JOIN](../Tema_2_2_2/09_joins.md). **Dades:** [esquema de Sakila](./esquema.md).
+**Teoria:** [JOIN](../../09_joins.md). **Dades:** [esquema de Sakila](./esquema.md).
 
 Utilitza àlies de taula i condicions `ON` explícites. Abans de comptar, identifica què representa cada fila després de la composició: un títol, una còpia, una participació o un lloguer.
 

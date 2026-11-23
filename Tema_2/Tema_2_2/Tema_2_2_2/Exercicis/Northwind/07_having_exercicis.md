@@ -1,5 +1,7 @@
 # Exercicis de HAVING amb Northwind (PostgreSQL)
 
+> **Entorn:** si encara no tens la base de dades Northwind en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 ## Objectius i instruccions
 
 Practicar el filtratge de grups amb `HAVING` i distingir-lo del filtratge de files amb `WHERE`.
@@ -13,7 +15,7 @@ Treballa amb la mateixa base de dades **Northwind** de la [pràctica de GROUP BY
 - Desa les consultes en un fitxer `.sql` i identifica cada exercici amb un comentari.
 - Un resultat buit no implica necessàriament un error: pot ser que cap grup compleixi els llindars demanats.
 
-**Material de consulta:** [Funcions d'agregació](./05_funcions_agregacio.md), [GROUP BY](./06_group_by.md) i [Introducció a HAVING](./07_having.md).
+**Material de consulta:** [Funcions d'agregació](../../05_funcions_agregacio.md), [GROUP BY](../../06_group_by.md) i [Introducció a HAVING](../../07_having.md).
 
 ## Taules i columnes que utilitzarem
 

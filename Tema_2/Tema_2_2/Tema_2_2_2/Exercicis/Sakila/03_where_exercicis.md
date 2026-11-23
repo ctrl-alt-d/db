@@ -1,8 +1,10 @@
 # 03. WHERE amb Sakila
 
+> **Entorn:** si encara no tens la base de dades Sakila en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 **Objectiu:** filtrar files amb comparacions, operadors lògics, intervals, conjunts de valors, patrons i valors nuls.
 
-**Teoria:** [WHERE](../Tema_2_2_2/03_where.md). **Dades:** [esquema de Sakila](./esquema.md).
+**Teoria:** [WHERE](../../03_where.md). **Dades:** [esquema de Sakila](./esquema.md).
 
 Utilitza una sola taula a cada consulta. Recorda que `BETWEEN` inclou els dos extrems, que `AND` té prioritat sobre `OR` i que els valors nuls es comproven amb `IS NULL` o `IS NOT NULL`.
 

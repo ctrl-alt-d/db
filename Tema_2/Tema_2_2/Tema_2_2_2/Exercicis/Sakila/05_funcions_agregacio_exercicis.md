@@ -1,8 +1,10 @@
 # 05. Funcions d'agregació amb Sakila
 
+> **Entorn:** si encara no tens la base de dades Sakila en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 **Objectiu:** obtenir resums globals i distingir `COUNT(*)`, `COUNT(columna)` i `COUNT(DISTINCT columna)`.
 
-**Teoria:** [Funcions d'agregació](../Tema_2_2_2/05_funcions_agregacio.md). **Dades:** [esquema de Sakila](./esquema.md).
+**Teoria:** [Funcions d'agregació](../../05_funcions_agregacio.md). **Dades:** [esquema de Sakila](./esquema.md).
 
 Consulta una sola taula per sentència, sense `GROUP BY` ni `JOIN`. Les funcions d'agregació, excepte `COUNT(*)`, ignoren els valors `NULL` de l'expressió. Sobre un conjunt buit, `COUNT` retorna 0; `SUM`, `AVG`, `MIN` i `MAX` retornen `NULL`.
 

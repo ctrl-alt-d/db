@@ -1,5 +1,7 @@
 # Exercicis de subconsultes amb Northwind (PostgreSQL)
 
+> **Entorn:** si encara no tens la base de dades Northwind en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 ## Objectius i instruccions
 
 Practicar subconsultes escalars, subconsultes amb `IN`, `ANY` i `ALL`, subconsultes correlacionades i l'operador `NOT EXISTS`. Utilitzar també subconsultes al `SELECT` i composicions internes dins d'una subconsulta.
@@ -13,7 +15,7 @@ Treballa amb la mateixa base de dades **Northwind** de les [pràctiques anterior
 - No cal arrodonir els resultats. Desa les consultes en un fitxer `.sql` i identifica cada exercici amb un comentari.
 - Un resultat buit pot ser correcte: depèn de les dades i de la condició.
 
-**Material de consulta:** [Subconsultes](./11_subconsultes.md), [Funcions d'agregació](./05_funcions_agregacio.md), [GROUP BY](./06_group_by.md), [HAVING](./07_having.md) i [JOIN](./09_joins.md).
+**Material de consulta:** [Subconsultes](../../11_subconsultes.md), [Funcions d'agregació](../../05_funcions_agregacio.md), [GROUP BY](../../06_group_by.md), [HAVING](../../07_having.md) i [JOIN](../../09_joins.md).
 
 ## Taules i columnes que utilitzarem
 

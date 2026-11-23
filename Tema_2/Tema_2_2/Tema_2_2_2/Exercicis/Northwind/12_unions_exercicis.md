@@ -1,5 +1,7 @@
 # Exercicis d'operacions de conjunts amb Northwind (PostgreSQL)
 
+> **Entorn:** si encara no tens la base de dades Northwind en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 ## Objectius i instruccions
 
 Practicar `UNION`, `UNION ALL`, `INTERSECT` i `EXCEPT`, i distingir com tracten els duplicats i l'ordre dels operands.
@@ -13,7 +15,7 @@ Treballa amb la mateixa base de dades **Northwind** de les [pràctiques anterior
 - Desa les consultes en un fitxer `.sql` i identifica cada exercici amb un comentari.
 - Un resultat buit pot ser correcte: depèn de les dades i de l'operació.
 
-**Material de consulta:** [Unions i altres operacions](./12_unions.md) i [Operacions de conjunts en àlgebra relacional](./10_algebra_III.md).
+**Material de consulta:** [Unions i altres operacions](../../12_unions.md) i [Operacions de conjunts en àlgebra relacional](../../10_algebra_III.md).
 
 ## Taules i columnes que utilitzarem
 

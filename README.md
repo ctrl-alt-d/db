@@ -18,7 +18,6 @@ Equivalència en crèdits ECTS: 12
   * Tema 2.2. DML - [Data Manipulation Language](./Tema_2/Tema_2_2/readme.md)
     * [Tema 2.2.1. Insercions](./Tema_2/Tema_2_2/Tema_2_2_1/readme.md) (RA4)
     * [Tema 2.2.2. Consultes](./Tema_2/Tema_2_2/Tema_2_2_2/readme.md) (RA3)
-    * [Tema 2.2.2bis. Pràctiques de consultes amb Sakila](./Tema_2/Tema_2_2/Tema_2_2_2bis/readme.md) (RA3)
     * [Tema 2.2.3. Actualitzacions](./Tema_2/Tema_2_2/Tema_2_2_3/readme.md) (RA4)
     * [Tema 2.2.4. Esborrats](./Tema_2/Tema_2_2/Tema_2_2_4/readme.md) (RA4)
   * [Tema 2.3. Transaccions](./Tema_2/Tema_2_3/readme.md) (RA4)
@@ -108,32 +107,33 @@ Temporalització orientativa de l'assignatura:
 
 Entorns per a fer pràctiques d'sql, sistemes gestors de base de dades sense dades i d'altres amb base de dades d'exemple.
 
-### Entorn Azure SQL Edge
+### Entorn SQL Server
 
-**Azure SQL Edge** és una versió optimitzada del motor de bases de dades de SQL Server, dissenyada per a dispositius IoT i edge computing. Utilitza el mateix motor que SQL Server, per tant la sintaxi T-SQL és pràcticament idèntica.
+Per treballar amb bases de dades relacionals, inicialment, farem servir **Microsoft SQL Server 2022** dins docker i DBeaver com a client. El llenguatge SQL propi de SQL Server s'anomena T-SQL (Transact-SQL).
 
-> **Per què Azure SQL Edge i no SQL Server?**  
-> SQL Server només està disponible per a arquitectures x64 (Intel/AMD). Azure SQL Edge, en canvi, també funciona en arquitectures ARM64, com els Mac amb processadors Apple Silicon (M1, M2, M3...). Això ens permet treballar amb T-SQL en qualsevol equip.
+> **I si tinc un Mac amb Apple Silicon (M1, M2... M5)?**  
+> Microsoft només publica la imatge de SQL Server per a l'arquitectura x64 (Intel/AMD). En un Mac amb Apple Silicon (ARM64), Docker Desktop l'executa mitjançant emulació (Rosetta): per això l'ordre inclou `--platform linux/amd64`. Abans fèiem servir Azure SQL Edge, però Microsoft el va retirar el 30 de setembre de 2025 i ja no té suport.
 
-Per treballar amb bases de dades relacionals, inicialment, farem servir Azure SQL Edge dins docker i DBeaver com a client.
-
-Un cop instal·lat Docker, podem baixar la imatge de Azure SQL Edge i crear un contenidor amb les següents comandes:
+Un cop instal·lat Docker, podem baixar la imatge de SQL Server i crear un contenidor amb la següent comanda:
 
 ```bash
-docker run --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=yourStrong(!)Password' -p 1433:1433 --name sql1 -d mcr.microsoft.com/azure-sql-edge
+docker run --platform linux/amd64 -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=yourStrong(!)Password' -p 1433:1433 --name sql1 -d mcr.microsoft.com/mssql/server:2022-latest
 ```
 
 Què significa cada paràmetre?
-- `-e "ACCEPT_EULA=Y"`: Accepta l'acord de llicència.
-- `-e "MSSQL_SA_PASSWORD=yourStrong(!)Password"`: Defineix la contrasenya per l'usuari `sa`.
+- `--platform linux/amd64`: Indica que la imatge és per a l'arquitectura x64. En equips Intel/AMD no té cap efecte; en un Mac amb Apple Silicon evita l'avís de plataforma i activa l'emulació.
+- `-e 'ACCEPT_EULA=Y'`: Accepta l'acord de llicència.
+- `-e 'MSSQL_SA_PASSWORD=yourStrong(!)Password'`: Defineix la contrasenya per l'usuari `sa`.
 - `-p 1433:1433`: Mapeja el port 1433 del contenidor al port 1433 de la màquina host.
 - `--name sql1`: Assigna el nom `sql1` al contenidor.
 - `-d`: Executa el contenidor en mode desatès (background).
-- `mcr.microsoft.com/mssql/server:2022-latest`: Especifica la imatge de  a utilitzar.
+- `mcr.microsoft.com/mssql/server:2022-latest`: Especifica la imatge de SQL Server 2022 a utilitzar.
+
+> Si ja tenies un contenidor anomenat `sql1` creat amb Azure SQL Edge, Docker avisarà que el nom ja està en ús. Elimina'l amb `docker rm -f sql1` (perdràs les dades que hi tinguessis) i torna a executar la comanda.
 
 Un cop el contenidor està en funcionament, podem connectar-nos-hi utilitzant DBeaver.
 
-Comprova que s'ha engegat correctament amb la comanda, si no és així, repassa els logs.
+Comprova que s'ha engegat correctament amb la comanda `docker ps`, si no és així, repassa els logs.
 
 Comandes útils per gestionar el contenidor:
 - `docker ps`: Llista els contenidors en execució.
@@ -143,7 +143,7 @@ Comandes útils per gestionar el contenidor:
 
 #### Connexió amb DBeaver
 
-Per connectar-te a Azure SQL Edge des de DBeaver:
+Per connectar-te a SQL Server des de DBeaver:
 1. Crea una nova connexió seleccionant **SQL Server**.
 2. Introdueix les dades de connexió:
    - **Host**: `localhost`
@@ -151,7 +151,8 @@ Per connectar-te a Azure SQL Edge des de DBeaver:
    - **Database**: `master` (base de dades per defecte)
    - **Username**: `sa`
    - **Password**: `yourStrong(!)Password`
-3. Prova la connexió i guarda-la.
+3. Si la prova de connexió falla amb un error de certificat o d'SSL, marca l'opció `Trust server certificate`.
+4. Prova la connexió i guarda-la.
 
 #### Creació de la base de dades
 
@@ -161,7 +162,7 @@ Un cop connectats amb DBeaver, podem crear una nova base de dades usant l'entorn
 CREATE DATABASE nom_base_dades;
 ```
 
-Repeteix la pràctica d'introducció a SQL, però aquesta vegada utilitzant Azure SQL Edge. Pots trobar la pràctica [aquí](../Tema_1/Contingut/creant-una-base-de-dades-a-supabase.md)
+Aquest és l'entorn de la [Pràctica 1 - Creant una base de dades a SQL Server](./Tema_1/Contingut/creant-una-base-de-dades-a-sql-server.md), on trobaràs tots els passos.
 
 ### Entorn Postgres
 
@@ -210,7 +211,7 @@ Un cop connectats amb DBeaver, podem crear una nova base de dades usant l'entorn
 CREATE DATABASE nom_base_dades;
 ```
 
-Repeteix la pràctica d'introducció a SQL, però aquesta vegada utilitzant PostgreSQL. Pots trobar la pràctica [aquí](../Tema_1/Contingut/creant-una-base-de-dades-a-supabase.md)
+Repeteix la [pràctica d'introducció a SQL](./Tema_1/Contingut/creant-una-base-de-dades-a-sql-server.md), però aquesta vegada utilitzant PostgreSQL. Les sentències per crear taules, inserir, consultar, modificar i esborrar dades són les mateixes. Només canvia un pas: PostgreSQL no té la sentència `use`. Després de crear la base de dades, edita la connexió de DBeaver (o crea'n una de nova), posa el nom de la nova base de dades al camp **Database** i obre un editor SQL nou. Les taules les trobaràs a `Schemas` > `public` > `Tables`.
 
 ### SGBD amb bases de dades d'exemple:
 

@@ -11,11 +11,16 @@ Les consultes ens permeten:
 - Agrupar i agregar dades
 - Combinar informació de diverses fonts
 
-## Pràctiques amb Sakila
+## Exercicis
 
-Per practicar tots els apartats d'aquest tema amb una mateixa base de dades, consulta les [pràctiques amb Sakila per a PostgreSQL](../Tema_2_2_2bis/readme.md). Hi trobaràs la guia d'instal·lació, dos exemples resolts per apartat i exercicis sense solució, inclòs un bloc específic de `GROUP BY`.
+Cada apartat del tema es pot practicar amb dos jocs d'exercicis. Tots dos inclouen exemples resolts i exercicis sense solució, i cadascun té una pàgina amb les instruccions per instal·lar l'entorn i connectar-s'hi:
 
-## Entorns de proves:
+* [Exercicis amb Northwind](./Exercicis/Northwind/readme.md): empresa de comerç majorista.
+* [Exercicis amb Sakila](./Exercicis/Sakila/readme.md): videoclub. Inclou també pràctiques d'àlgebra relacional.
+
+Totes dues bases de dades utilitzen el port `5432`: atura'n una abans d'engegar l'altra.
+
+## Altres entorns de proves
 
 Aquests entorns es poden executar directament dins docker o dins docker compose:
 
@@ -56,28 +61,22 @@ Instruccions:
 Nota: És només una taula
 
 
-### NorthWind (postgres)
+### Northwind i Sakila
 
-* SGBD Base de dades: PostgreSQL
-* Usuari: northwind
-* Base de dades: northwind
-* Password: northwind
-* url: https://github.com/bradymholt/docker-postgresql-northwind
-* Temàtica: empresa de comerç majorista
-* Engegar amb docker: `docker run --rm -it -p 5432:5432 --name postgres-northwind bradymholt/postgres-northwind:latest`
+Són les bases de dades dels exercicis d'aquest tema. Trobaràs les instruccions a les pàgines d'[exercicis amb Northwind](./Exercicis/Northwind/readme.md#entorn-de-treball) i d'[exercicis amb Sakila](./Exercicis/Sakila/readme.md#entorn-de-treball).
 
 
 ## Índex
 
-* [Conceptes d'àlgebra relacional (selecció, projecció)](./01_algebra.md)
-* [Select senzilla](./02_intro_select.md) | [Exercicis](./02_intro_select_exercicis.md)
-* [Introduint Where](./03_where.md) | [Exercicis](./03_where_exercicis.md)
-* [Introduint Order By](./04_order_by.md) | [Exercicis](./04_order_by_exercicis.md)
-* [Introduint funcions d'agregació](./05_funcions_agregacio.md) | [Exercicis](./05_funcions_agregacio_exercicis.md)
-* [Introduint Group By](./06_group_by.md) | [Exercicis](./06_group_by_exercicis.md)
-* [Introduint Having](./07_having.md) | [Exercicis](./07_having_exercicis.md)
-* [Conceptes d'àlgebra relacional (producte cartesià)](./08_algebra_II.md)
-* [Introduint Joins](./09_joins.md) | [Exercicis](./09_joins_exercicis.md)
-* [Conceptes d'àlgebra relacional (unions, interseccions, diferències)](./10_algebra_III.md)
-* [Introduint Subconsultes](./11_subconsultes.md) | [Exercicis](./11_subconsultes_exercicis.md)
-* [Introduint Unions i altres operacions avançades](./12_unions.md) | [Exercicis](./12_unions_exercicis.md)
+* [Conceptes d'àlgebra relacional (selecció, projecció)](./01_algebra.md) | [Exercicis amb Sakila](./Exercicis/Sakila/01_algebra_exercicis.md)
+* [Select senzilla](./02_intro_select.md) | [Exercicis amb Northwind](./Exercicis/Northwind/02_intro_select_exercicis.md) | [Exercicis amb Sakila](./Exercicis/Sakila/02_intro_select_exercicis.md)
+* [Introduint Where](./03_where.md) | [Exercicis amb Northwind](./Exercicis/Northwind/03_where_exercicis.md) | [Exercicis amb Sakila](./Exercicis/Sakila/03_where_exercicis.md)
+* [Introduint Order By](./04_order_by.md) | [Exercicis amb Northwind](./Exercicis/Northwind/04_order_by_exercicis.md) | [Exercicis amb Sakila](./Exercicis/Sakila/04_order_by_exercicis.md)
+* [Introduint funcions d'agregació](./05_funcions_agregacio.md) | [Exercicis amb Northwind](./Exercicis/Northwind/05_funcions_agregacio_exercicis.md) | [Exercicis amb Sakila](./Exercicis/Sakila/05_funcions_agregacio_exercicis.md)
+* [Introduint Group By](./06_group_by.md) | [Exercicis amb Northwind](./Exercicis/Northwind/06_group_by_exercicis.md) | [Exercicis amb Sakila](./Exercicis/Sakila/06_group_by_exercicis.md)
+* [Introduint Having](./07_having.md) | [Exercicis amb Northwind](./Exercicis/Northwind/07_having_exercicis.md) | [Exercicis amb Sakila](./Exercicis/Sakila/07_having_exercicis.md)
+* [Conceptes d'àlgebra relacional (producte cartesià)](./08_algebra_II.md) | [Exercicis amb Sakila](./Exercicis/Sakila/08_algebra_II_exercicis.md)
+* [Introduint Joins](./09_joins.md) | [Exercicis amb Northwind](./Exercicis/Northwind/09_joins_exercicis.md) | [Exercicis amb Sakila](./Exercicis/Sakila/09_joins_exercicis.md)
+* [Conceptes d'àlgebra relacional (unions, interseccions, diferències)](./10_algebra_III.md) | [Exercicis amb Sakila](./Exercicis/Sakila/10_algebra_III_exercicis.md)
+* [Introduint Subconsultes](./11_subconsultes.md) | [Exercicis amb Northwind](./Exercicis/Northwind/11_subconsultes_exercicis.md) | [Exercicis amb Sakila](./Exercicis/Sakila/11_subconsultes_exercicis.md)
+* [Introduint Unions i altres operacions avançades](./12_unions.md) | [Exercicis amb Northwind](./Exercicis/Northwind/12_unions_exercicis.md) | [Exercicis amb Sakila](./Exercicis/Sakila/12_unions_exercicis.md)

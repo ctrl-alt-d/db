@@ -1,5 +1,7 @@
 # Exercicis de SELECT amb Northwind (PostgreSQL)
 
+> **Entorn:** si encara no tens la base de dades Northwind en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 ## Objectius i instruccions
 
 Practicar la selecció de columnes, els àlies amb `AS`, les expressions aritmètiques, els literals i l'eliminació de duplicats amb `DISTINCT`.
@@ -14,7 +16,7 @@ Treballa amb la base de dades **Northwind** en PostgreSQL. Els noms de les taule
 - No cal arrodonir els resultats dels càlculs. El nombre de decimals que mostra l'eina pot variar.
 - Desa les consultes en un fitxer `.sql`, amb un comentari que indiqui el número de cada exercici.
 
-**Material de consulta:** [Introducció a SELECT](./02_intro_select.md).
+**Material de consulta:** [Introducció a SELECT](../../02_intro_select.md).
 
 ## Taules i columnes que utilitzarem
 
@@ -275,4 +277,4 @@ Abans de donar la pràctica per acabada, revisa que:
 
 ---
 
-[Torna a la teoria de SELECT](./02_intro_select.md) | [Torna a l'índex](./readme.md)
+[Torna a la teoria de SELECT](../../02_intro_select.md) | [Torna a l'índex](./readme.md)

@@ -1,5 +1,7 @@
 # Exercicis d'ORDER BY amb Northwind (PostgreSQL)
 
+> **Entorn:** si encara no tens la base de dades Northwind en marxa, segueix la [guia d'instal·lació i connexió](./readme.md#entorn-de-treball).
+
 ## Objectius i instruccions
 
 Practicar l'ordenació dels resultats amb `ORDER BY`, tant en ordre ascendent (`ASC`) com descendent (`DESC`), i combinar diversos criteris d'ordenació amb els filtres de `WHERE`.
@@ -13,7 +15,7 @@ Treballa amb la mateixa base de dades **Northwind** de les pràctiques de [SELEC
 - Respecta tots els criteris de desempat indicats als enunciats.
 - Desa les consultes en un fitxer `.sql` i identifica cada exercici amb un comentari.
 
-**Material de consulta:** [Introducció a ORDER BY](./04_order_by.md).
+**Material de consulta:** [Introducció a ORDER BY](../../04_order_by.md).
 
 ## Taules i columnes que utilitzarem
 
@@ -291,4 +293,4 @@ Abans de donar la pràctica per acabada, revisa que:
 
 ---
 
-[Torna a la teoria d'ORDER BY](./04_order_by.md) | [Exercicis de WHERE](./03_where_exercicis.md) | [Torna a l'índex](./readme.md)
+[Torna a la teoria d'ORDER BY](../../04_order_by.md) | [Exercicis de WHERE](./03_where_exercicis.md) | [Torna a l'índex](./readme.md)
